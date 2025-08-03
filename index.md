@@ -11,7 +11,7 @@ permalink: /
 
 [link](/_posts/2025-08-03-liftoff.md)
 
-[hello](/_posts/2024-10-07-helloDjango.md)
+[hello](/_posts/2024-10-07-Maalisuora.md)
 
 [Google Link](https://google.com)
 
