@@ -9,7 +9,7 @@ permalink: /
 - item 1
 - item 2
 
-[link](/_posts)
+[link](/_posts/2025-08-03-liftoff.md)
 
 [Google Link](https://google.com)
 
