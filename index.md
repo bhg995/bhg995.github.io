@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Welcome to my Page
-permalink: /2025/08/03/liftoff.html
+permalink: /
 ---
 
 # Welcome
