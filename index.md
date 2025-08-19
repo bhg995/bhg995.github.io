@@ -7,7 +7,7 @@ description: ICI012AS3A-3002
 
 This page contains reports for the subject Application hacking and vulnerabilities.
 
-- [Korkeat standardit](/_posts/2025-08-20-iso.md) Under work
+- [Korkeat standardit](/2025-08-20-iso.md) Under work
 - [Break & unbreak](/_posts/2025-08-xx-batter.md) Upcoming
 - [No strings attached](/_posts/2025-08-xx-Onot0.md) Upcoming
 - [Kääntöpaikka](/_posts/2025-08-xx-esrever.md) Upcoming
