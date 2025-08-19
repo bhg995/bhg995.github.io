@@ -3,3 +3,8 @@ plugins:
   - jekyll-remote-theme
 title: IT
 description: Reports about Linux machines and more
+
+collections:
+  appsec:
+  output: true
+  permalink: /appsec/:title/
