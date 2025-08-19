@@ -18,5 +18,5 @@ This page contains reports for the subject Application hacking and vulnerabiliti
 
 
 <footer>
-  <p>&copy; {{ site.time | date: "%Y" }} Your Name or Site</p>
+  <p>&copy; {{ site.time | date: "%Y" }} Bhg995</p>
 </footer>
