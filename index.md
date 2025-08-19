@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Welcome to my Page
+description: This page
 permalink: /
 ---
 
