@@ -7,4 +7,5 @@ description: Reports about Linux machines and more
 collections:
   appsec:
   output: true
-  permalink: /appsec/:title/
+  permalink: /_appsec/:title/
+
