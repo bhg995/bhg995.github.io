@@ -1,19 +1,19 @@
 ---
-layout: default
-title: Welcome to my Page
-description: This page
-permalink: /
+title: Sovellusten hakkerointi ja haavoittuvuudet
+description: ICI012AS3A-3002
 ---
 
 # Welcome
 
-- item 1
-- item 2
+This page contains reports for the subject Application hacking and vulnerabilities.
 
-[link](/_posts/2025-08-03-liftoff.md)
+- [Korkeat standardit](/_appsec/2025-08-20-iso.md) Under work
+- [Break & unbreak](/_appsec/2025-08-xx-batter.md) Upcoming
+- [No strings attached](/_appsec/2025-08-xx-Onot0.md) Upcoming
+- [Kääntöpaikka](/_appsec/2025-08-xx-esrever.md) Upcoming
+- [Se elää!](/_appsec/2025-08-xx-fmonster.md) Upcoming
+- [Sulaa hulluutta](/_appsec/2025-08-xx-apk.md) Upcoming
+- [Uhagre2](/_appsec/2025-08-xx-crypto.md) Upcoming
+- [Bonus](/_appsec/2025-08-xx-finally.md) Upcoming
 
-[hello](/_posts/2024-10-07-Maalisuora.md)
 
-[Google Link](https://google.com)
-
-![macbook pro on white surface in a dark room](https://images.unsplash.com/photo-1537498425277-c283d32ef9db?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGNvbXB1dGVyfGVufDB8fDB8fHww)
