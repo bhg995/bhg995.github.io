@@ -4,8 +4,5 @@ plugins:
 title: IT
 description: Reports about Linux machines and more
 
-collections:
-  appsec:
-  output: true
-  permalink: /_appsec/:title/
+
 
