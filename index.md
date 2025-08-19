@@ -17,3 +17,6 @@ This page contains reports for the subject Application hacking and vulnerabiliti
 - [Bonus](/_appsec/2025-08-xx-finally.md) Upcoming
 
 
+<footer>
+  <p>&copy; {{ site.time | date: "%Y" }} Your Name or Site</p>
+</footer>
