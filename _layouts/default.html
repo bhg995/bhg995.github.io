@@ -1,0 +1,105 @@
+
+
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+    <!-- <title>IT &amp; Security Projects | IT</title> -->
+    <title>  {% if page.title %}
+    {{ page.title }}
+    {% if page.section %} | {{ page.section }}{% endif %}
+    | {{ site.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif %}</title>
+    <meta name="generator" content="Jekyll v3.10.0" />
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta name="description"
+        content="Programming, Configuration Management, and Computer Security — including projects and reports." /> -->
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+
+
+
+    <!-- You can set your favicon here -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+    <!-- end custom head snippets -->
+
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>{{ page.title | default: site.title }}</h1>
+        {% if page.description %}
+        <p>{{ page.description }}</p>
+        {% elsif site.description %}
+        <p>{{ site.description }}</p>
+        {% endif %}
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/bhg995/bhg995.github.io" class="button fork"><strong>View On GitHub</strong></a>
+
+    </div><!-- end banner -->
+
+    <div class="wrapper">
+
+        <section>
+            {{ content }}
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; {{ site.time | date: "%Y" }}</strong></p>
+                <p>
+                    Maintained by <a href="https://github.com/bhg995" target="_blank">bhg995</a> |
+                    <small>
+                        <a href="https://twitter.com/mattgraham" target="_blank">Theme by @mattgraham</a> |
+                        <a href="https://pages.github.com/" target="_blank">Hosted on GitHub Pages</a>
+                    </small>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
