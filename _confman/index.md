@@ -5,7 +5,9 @@ description: IaaS, Saltproject, Daemons and other fun stuff
 permalink: /confman/
 ---
 
-<a href="/">Main Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Linux Servers</a></button>
+<button><a href="/appsec">Application Security</a></button>
 
 # {{ page.title }}
 
@@ -15,6 +17,6 @@ Configuration Management Systems course 2024 autumn: Palvelinten hallinta ICI001
 
 {% for post in site.posts %}
 {% if post.path contains '_posts/confman/' %}
-- [`{{ post.title }}`]({{ post.url }})- {{ post.date | date: "%B %d, %Y" }} 
+- [{{ post.title }}]({{ post.url }})- {{ post.date | date: "%B %d, %Y" }} 
 {% endif %}
 {% endfor %}

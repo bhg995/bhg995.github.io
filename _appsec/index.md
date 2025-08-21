@@ -5,7 +5,10 @@ description: About app security
 permalink: /appsec/
 ---
 
-<a href="/">Main Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Linux Servers</a></button>
+<button><a href="/confman">Configuration Management</a></button>
+
 
 # {{ page.title }} & Vulnerabilities
 
@@ -16,6 +19,6 @@ Sovellusten hakkerointi 2025 alkusyksy: ICI012AS3A-3002
 
 {% for post in site.posts %}
 {% if post.path contains '_posts/appsec/' %}
-- [`{{ post.title }}`]({{ post.url }})- {{ post.date | date: "%B %d, %Y" }} 
+- [{{ post.title }}]({{ post.url }})- {{ post.date | date: "%B %d, %Y" }} 
 {% endif %}
 {% endfor %}
