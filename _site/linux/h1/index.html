@@ -1,0 +1,240 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Get Started with Linux
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Install Debian and start using it">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Get Started with Linux</h1>
+        
+        <p>Install Debian and start using it</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/linux">Previous Page</a></p>
+
+<h1 id="raportin-kirjoittaminen--virtuaalikoneen-asennus-512025">Raportin kirjoittaminen &amp; Virtuaalikoneen asennus 5.1.2025</h1>
+
+<ul>
+  <li>Raportti kirjoitetaan toimeenpiteestä jota ollaan suoritettu tietokoneella.</li>
+  <li>Raportin tulos pitää olla sama, jos joku muu suorittaisi saman toimenpiteen mitä raportissa on selostettu.</li>
+  <li>Raportin tulee olla täsmällinen, siinä pitää käydä ilmi mitä on tehty, miten se on tehty, millä se on tehty, sekä missä ja milloin. Olosuhteet voidaan ilmoittaa myös jos siitä on tarpeen.</li>
+  <li>Raportin tulee olla helppolukuinen ja kirjoitettu huolellisesti.</li>
+  <li>Raportin tulee välttää plagiointia, sepittämistä tai muuta epäasiallista tekstiä.</li>
+  <li>Raportissa tulee olla lähdeviitteet, jos on esitetty muiden tahojen tekstiä, työtä, kuvaa tai muuta asiaa joka loukkaisi tekijänoikeuksia. [1]</li>
+</ul>
+
+<h2 id="free-software-foundation">Free Software Foundation</h2>
+
+<p>Vapaa ohjelmisto. Tarkoittaa että henkilöillä ja tahoilla on oikeus sovelluksen tai ohjelmiston vapaata</p>
+<ol>
+  <li>käyttöä,</li>
+  <li>muokkaamista,</li>
+  <li>alkuperäisen ohjelman jakamista</li>
+  <li>alkuperäisen ohjelman jakaminen omien muokkausten jälkeen.</li>
+</ol>
+
+<p>[2]</p>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li><strong>MacBook Air INTEL</strong>
+    <ul>
+      <li>MacOS Monterey 12.7.5</li>
+      <li>Intel Core i5</li>
+      <li>8 Gt 1600 MHz DDR3</li>
+      <li>Intel HD Graphics 6000</li>
+    </ul>
+  </li>
+  <li><strong>VirtualBox 7</strong>
+    <ul>
+      <li>Debian 12</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="asenna-linux-virtuaalikoneeseen">Asenna Linux virtuaalikoneeseen.</h2>
+
+<p><strong>Käyttöjärjestelmä</strong></p>
+
+<p>Debian Live images: https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Date &amp; Time</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ISO</td>
+      <td><strong><code class="language-plaintext highlighter-rouge">debian-live-12.8.0-amd64-xfce.iso</code></strong></td>
+      <td>2024-11-09 11:10</td>
+      <td>3.0G</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>debian-live-12.8.0-amd64-xfce.iso.contents</td>
+      <td>2024-11-09 12:56</td>
+      <td>52K</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>debian-live-12.8.0-amd64-xfce.iso.log</td>
+      <td>2024-11-09 13:06</td>
+      <td>1.7M</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>debian-live-12.8.0-amd64-xfce.iso.packages</td>
+      <td>2024-11-09 12:33</td>
+      <td>65K</td>
+    </tr>
+    <tr>
+      <td>TXT</td>
+      <td>debian-live-12.8.0-amd64-xfce.log</td>
+      <td>2024-11-09 13:05</td>
+      <td>1.8M</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Virtuaalikone</strong></p>
+
+<p>VirtualBox: https://www.virtualbox.org/wiki/Downloads</p>
+
+<p><img src="laksu/downl_virtualBox.png" alt="PlatformPackages" /></p>
+
+<p>Valitse mille alustalle haluat asentaa.</p>
+
+<p>Avaa lataamasi VirtualBox ohjelma ja valitse <code class="language-plaintext highlighter-rouge">New</code>. Tämä luo uuden virtuaalikoneen</p>
+
+<p><img src="laksu/newVirtualB.png" alt="virtualbox" /></p>
+
+<p>Anna virtuaalikoneelle nimi. <code class="language-plaintext highlighter-rouge">DeLi</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">Folder</code> on kansio mihin virtuaalikone tallennetaan. Oletuksena <code class="language-plaintext highlighter-rouge">~/user/VirtualBox VMs</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">ISO Image</code>, on tässä <a href="https://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/">Debian Live Image</a> sivulta ladattu <code class="language-plaintext highlighter-rouge">-xfce.iso</code> tiedosto.</p>
+
+<p><img src="laksu/createVboxEnv.png" alt="newbox" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Expert Mode</code> napin takaa voit tehdä lisää muokkauksia virtuaalikoneeseen, kuten tallennustila ja prosessorien resurssit.</p>
+
+<p>Voit vaihtoehtoisesti täpätä <code class="language-plaintext highlighter-rouge">Skip Unattended Installation</code> ja painaa Next/seuraava ja jatkaa.</p>
+
+<p><img src="laksu/newMachine.png" alt="newmachine" /></p>
+
+<p>Uusi kone näkyy listalla. Oletusresurssit ovat 2 GB RAM ja 60 GB tallennustilaa.</p>
+
+<p>Käynnistä kone valitsemalla kone ja painamalla Start.</p>
+
+<p><img src="laksu/installe.png" alt="choose" /></p>
+
+<p>Voit asentaa käyttöjärjestelmän heti, valitsemalla Start installer …</p>
+
+<p>… tai voit valita Live system ja tutkistella miltä käyttöjärjestelmä näyttää ensin.</p>
+
+<p><img src="laksu/debiLive.png" alt="liveOS" /></p>
+
+<p>Voit käyttää virtuaaliympäristöä jo. Avaa selain ja selaile esim. paikalliseen uutissivustoon, voit kokeilla terminaalia jne.</p>
+
+<p>Voit asentaa käyttöjärjestelmän. Avaa työpöydällä oleva <code class="language-plaintext highlighter-rouge">Install Debian</code> tuplaklikkaamalla.</p>
+
+<p>Tämä avaa ikkunan jossa voit muokata ensin asetuksia virtuaalikoneelle ja sen jälkeen aloittaa asennuksen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/e4b40c92-2fc7-4542-bd6b-5912a6a86b41" alt="10" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">Launch Anyway</code></p>
+
+<hr />
+
+<p>Asetuksessa valitset tietokoneen sijainnin, kielen, näppäimistökielen ja kellonajan sekä päivämäärän</p>
+
+<p>Käytä vahvaa salasanaa käyttäjätunnukselle.</p>
+
+<p><img src="laksu/installingDeb.png" alt="installing" /></p>
+
+<h2 id="lähteet">Lähteet</h2>
+
+<ol>
+  <li>Karvinen, Tero. Raportin kirjoittaminen 4.6.2006. Luettavissa: https://terokarvinen.com/2006/raportin-kirjoittaminen-4/. Luettu: 21.8.2024.</li>
+  <li>GNU. What is Free Software s.a. Luettavissa: https://www.gnu.org/philosophy/free-sw.html. Luettu 24.8.2024</li>
+</ol>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

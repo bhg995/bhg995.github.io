@@ -1,0 +1,203 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Moduuli: WireGuard
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="about config management">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Moduuli: WireGuard</h1>
+        
+        <p>about config management</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/confman">Previous Page</a></p>
+
+<h1 id="moduuli-wireguard">Moduuli: WireGuard</h1>
+
+<p>Palvelinten hallinta ICI001AS3A-3010 - Syksy 2024</p>
+
+<h2 id="h4-puolikas-tehtävä">h4 puolikas <a href="https://terokarvinen.com/palvelinten-hallinta/#h4-puolikas">Tehtävä</a></h2>
+
+<h2 id="a-puolikas-tee-ensimmäinen-vedos-omasta-modulista">a) Puolikas. Tee ensimmäinen vedos omasta modulista.</h2>
+
+<p><strong><em><a href="https://github.com/bhg995/projekti">Lopputulos</a></em></strong></p>
+
+<p><strong>server</strong></p>
+
+<p>Generate keys</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo wg genkey | sudo tee /etc/wireguard/privatekey | sudo wg pubkey | sudo tee /etc/wireguard/publickey
+</code></pre></div></div>
+
+<p>Copy the private key</p>
+
+<p>Check the interface</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip -o -4 route show to default | awk '{print $5}'
+</code></pre></div></div>
+
+<p>On the server wg0.conf</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Interface]
+PrivateKey= &lt;PrivateKey&gt; LOCATION: /etc/wireguard/privatekey
+Address = 10.0.0.1/8
+SaveConfig=true
+
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE;
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE;
+
+ListenPort=51820
+</code></pre></div></div>
+
+<p>Start the wg0 on the server</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wg-quick up wg0
+</code></pre></div></div>
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/initialServerwgshow.png" alt="FiredupWG" /></p>
+
+<p>check is working</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo wg show
+</code></pre></div></div>
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/initialWGSHOW.png" alt="sudowg" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ip link
+</code></pre></div></div>
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/ipLinkshow.png" alt="iplink" /></p>
+
+<p>check ipv4 is routing packages</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cat /proc/sys/net/ipv4/ip_forward
+
+$ sudo sysctl -w net.ipv4.ip_forward=1 # run this command if the output of previous is 0
+</code></pre></div></div>
+
+<p><strong>Client</strong></p>
+
+<p>Generate keys</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo wg genkey | sudo tee /etc/wireguard/privatekey | sudo wg pubkey | sudo tee /etc/wireguard/publickey
+</code></pre></div></div>
+<p>Copy the private key</p>
+
+<p>On the client wg0.conf</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Interface]
+PrivateKey= &lt;PrivateKey&gt; LOCATION: /etc/wireguard/privatekey
+Address=10.0.0.2/8
+SaveConfig=true
+
+[Peer]
+PublicKey=zL0ygVM3hvDFWcKZ1kWBLb/u/aLq5rk0wMmbmYjpDTw=
+Endpoint=192.168.1.101:51820
+AllowedIPs=0.0.0.0/0
+PersistentKeepalive=20
+</code></pre></div></div>
+
+<p>Start the wireguard</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wg-quick up wg0
+</code></pre></div></div>
+
+<p>Check the wg interface</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo wg
+</code></pre></div></div>
+
+<p>Copy the public key on display, it is the same you generated earlier for client public key.</p>
+
+<p><strong>server</strong></p>
+
+<p>run command to allow client</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo wg set wg0 peer &lt;clientPublicKey&gt; allowed-ips 10.0.0.2/32
+</code></pre></div></div>
+
+<p><strong>TEST</strong></p>
+
+<p><strong>on the client</strong></p>
+
+<p>ping 8.8.8.8</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/clientPingGoogle.png" alt="clientPing" /></p>
+
+<p>then on the <strong>server</strong> capture the traffic</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo tcpdump -envi wg0 host 8.8.8.8
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/capturingPackages.png" alt="captured" /></p>
+
+<h1 id="lähteet">Lähteet</h1>
+
+<ol>
+  <li><a href="https://www.youtube.com/watch?v=bVKNSf1p1d0">WireGuard installation and configuration - on Linux</a> - Youtube Link</li>
+  <li><a href="https://buymeacoffee.com/linuxshots/setup-your-private-vpn-wireguard">Setup Your Private VPN with WireGuard</a></li>
+</ol>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

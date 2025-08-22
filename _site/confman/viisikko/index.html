@@ -1,0 +1,332 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Viisikko
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Add some salt(project) and Voilà">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Viisikko</h1>
+        
+        <p>Add some salt(project) and Voilà</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/confman">Previous Page</a></p>
+
+<h1 id="hello-salt">Hello Salt.</h1>
+
+<p>Palvelinten hallinta ICI001AS3A-3010</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>päivä</th>
+      <th>aihe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-10-24 w43 Thu</td>
+      <td>Hello Salt. Master-slave, pull -arkkitehtuuri. Komentojen etäsuoritus (cmd.run, pkg.install). Tietojen kerääminen orjista (grains.items). Idempotentti konfiguraatio (foo.sls, top.sls). Esimerkkejä tiloista (file.managed).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li><strong>Tietokone: MacBook Air 2017, INTEL</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: macOS Monterey 12.7.5</li>
+      <li>Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5</li>
+      <li>Muisti: 8 Gt 1600 MHz DDR3</li>
+      <li>Näytönohjain: Intel HD Graphics 6000, 1536 Mt</li>
+    </ul>
+  </li>
+  <li><strong>Ympäristö: VirtualBox 7</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: Debian 12 Bookworm</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="h1-viisikko-tehtävät">h1 Viisikko. <a href="https://terokarvinen.com/palvelinten-hallinta/#h1-viisikko">Tehtävät</a></h2>
+
+<p>Aloitin su 27.10 klo 11:30, Käytin koko päivän Saltproject tutustumiseen, kokeiluun sekä raportin tekemiseen.</p>
+
+<h3 id="x-lue-ja-tiivistä">x) Lue ja tiivistä.</h3>
+
+<ul>
+  <li>Karvinen 2023: Run Salt Command Locally</li>
+</ul>
+
+<p>”””</p>
+
+<ul>
+  <li>Salt is normally used to control <strong>large number</strong> of slave computers over the network.</li>
+  <li>The most important <strong>state functions</strong> are <code class="language-plaintext highlighter-rouge">pkg</code>, <code class="language-plaintext highlighter-rouge">file</code>, <code class="language-plaintext highlighter-rouge">service</code>, <code class="language-plaintext highlighter-rouge">user</code> and <code class="language-plaintext highlighter-rouge">cmd</code>.</li>
+</ul>
+
+<p>”””</p>
+
+<p>Lähde [1]</p>
+
+<ul>
+  <li>Karvinen 2018: Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux</li>
+</ul>
+
+<p>”””</p>
+
+<p>The network will have one master, and many slaves. The master prompt below is “master$” and slave “minion” prompt is “slave$”.</p>
+
+<p>Install Master</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>master$ sudo apt-get -y install salt-master
+</code></pre></div></div>
+
+<p>Install Slave</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slave$ sudo apt-get -y install salt-minion
+</code></pre></div></div>
+
+<p>The slave must know where the master is</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>slave$ sudoedit /etc/salt/minion
+</code></pre></div></div>
+
+<p>”””</p>
+
+<p>Lähde [<a href="url">2</a>]</p>
+
+<ul>
+  <li>Karvinen 2006: <a href="https://terokarvinen.com/2006/06/04/raportin-kirjoittaminen-4/">Raportin kirjoittaminen</a>, tiivistelmä
+    <ul>
+      <li>Raportti kirjoitetaan toimeenpiteestä jota ollaan suoritettu tietokoneella.</li>
+      <li>Raportin tulos pitää olla sama, jos joku muu suorittaisi saman toimenpiteen mitä raportissa on selostettu.</li>
+      <li>Raportin tulee olla täsmällinen, siinä pitää käydä ilmi mitä on tehty, miten se on tehty, millä se on tehty, sekä missä ja milloin. Olosuhteet voidaan ilmoittaa myös jos siitä on tarpeen.</li>
+      <li>Raportin tulee olla helppolukuinen ja kirjoitettu huolellisesti.</li>
+      <li>Raportin tulee välttää plagiointia, sepittämistä tai muuta epäasiallista tekstiä.</li>
+      <li>Raportissa tulee olla lähdeviitteet, jos on esitetty muiden tahojen tekstiä, työtä, kuvaa tai muuta asiaa joka loukkaisi tekijänoikeuksia. Lähde [<a href="url">3</a>]</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="a-asenna-debian-12-bookworm-virtuaalikoneeseen">a) Asenna Debian 12-Bookworm virtuaalikoneeseen.</h3>
+
+<p><img src="https://github.com/user-attachments/assets/e641d2c8-4b63-49c8-8a8d-db819699da97" alt="debianJärjestelmätiedot" /></p>
+
+<p><strong>Alkutoimet</strong></p>
+
+<p>Päivitykset &amp; Palomuuri</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ apt-get update &amp;&amp; sudo apt-get upgrade
+
+$ apt-get install ufw
+$ enable ufw
+</code></pre></div></div>
+
+<h3 id="b-asenna-salt-salt-minion-linuxille-uuteen-virtuaalikoneeseesi">b) Asenna Salt (salt-minion) Linuxille (uuteen virtuaalikoneeseesi).</h3>
+
+<p>Debian 12 järjestelmälle tarkoitettu salt järjestelmän voi ladata sivulta https://docs.saltproject.io/salt/install-guide/en/latest/topics/install-by-operating-system/debian.html.</p>
+
+<p>Luennolla kerrattiin pakettien latauksen menetelmät. Muistutus että ei saisi kopioida nettisivuilta kommentoja ollenkaan tai käyttää nettisivujen sudokomentoja, ymmärtämättä.</p>
+
+<p>Sivulla näkyy komennot:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir /etc/apt/keyrings
+
+sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/debian/12/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
+echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main" | sudo tee /etc/apt/sources.list.d/salt.list
+</code></pre></div></div>
+
+<p>Ensimmäinen komento tekee keyrings kansion /etc/apt kansion alle. Seuraava komento lataa ja asentaa url sivulta .gpg tiedoston, jossa on julkinen avainpari. Viimeinen komento lisää salt.list tiedostoon järjestelmäasetuksia. Salt hakee päivitykset ja todentaa yhteyden <code class="language-plaintext highlighter-rouge">.gpg</code> tiedoston avaimella.</p>
+
+<p>Päätin että lataan tiedoston manuaalisesti ja lisään itse tekstin salt.list tiedostoon.</p>
+
+<p>Latasin .gpg tiedoston.</p>
+
+<p>Siirsin sen kansioon <code class="language-plaintext highlighter-rouge">/etc/apt/keyrings</code>.</p>
+
+<p>Sen jälkeen siirrying kansioon <code class="language-plaintext highlighter-rouge">/etc/apt/sources.list.d/</code> ja siellä tein <code class="language-plaintext highlighter-rouge">salt.list</code> tiedoston johon kirjoitin:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/debian/12/amd64/latest bookworm main
+</code></pre></div></div>
+
+<p>Sen jälkeen asennus:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install salt-master
+sudo apt-get install salt-minion
+</code></pre></div></div>
+
+<p>Tämän jälkeen ajoin komennon <code class="language-plaintext highlighter-rouge">sudo salt-call --version</code>, joka tulosti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>salt-call 3007.1 (Chlorine)
+</code></pre></div></div>
+
+<h3 id="c-viisi-tärkeintä-näytä-linuxissa-esimerkit-viidestä-tärkeimmästä-saltin-tilafunktiosta-pkg-file-service-user-cmd-analysoi-ja-selitä-tulokset">c) Viisi tärkeintä. Näytä Linuxissa esimerkit viidestä tärkeimmästä Saltin tilafunktiosta: pkg, file, service, user, cmd. Analysoi ja selitä tulokset.</h3>
+
+<ul>
+  <li>pkg, “Installation of packages using OS package managers such as yum or apt-get”</li>
+  <li>file, “Operations on regular files, special files, directories, and symlinks”</li>
+  <li>service, “Starting or restarting of services and daemons”</li>
+  <li>user, “Management of user accounts.”</li>
+  <li>cmd, “Execution of arbitrary commands”</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/5024ced2-7493-425d-9953-d160be04200d" alt="versio_komento" /></p>
+
+<p>Yllä näkyvässä kuvassa komento asensi <code class="language-plaintext highlighter-rouge">tree</code> tiedoston. Yksityiskohdista näkee, kätetty funktio <code class="language-plaintext highlighter-rouge">pkg.installed</code>, aloitusaika <code class="language-plaintext highlighter-rouge">20:32:21</code>, mutta tiivistelmä oli vihreän värinen ja kommentin kohdalla luki että <code class="language-plaintext highlighter-rouge">All specified packages are already installed</code>. Olin ajanut komennon aikaisemmin ennen näyttökuvaa. Sitten vielä <code class="language-plaintext highlighter-rouge">Succeeded</code> oli 1 ja <code class="language-plaintext highlighter-rouge">Failed</code> 0, eli mitään ei vaihtunut, koska tila oli tyydytetty.</p>
+
+<p><img src="https://github.com/user-attachments/assets/5a577351-baa9-4c24-a0db-1818a034660d" alt="file_managed" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/29be53b3-eb60-4dff-bcb8-e5a89f2866f2" alt="file_managedwithMSG" /></p>
+
+<p>Ylläolevassa kuvassa käytin <code class="language-plaintext highlighter-rouge">file.managed</code> tilafunktioo, ja loin uuden tiedoston <code class="language-plaintext highlighter-rouge">/tmp/simonsFolder</code>, ja <code class="language-plaintext highlighter-rouge">/tmp/sayings</code> sisällön kanssa. Tällä kertaa tiivistelmä oli sininen ja <code class="language-plaintext highlighter-rouge">Succeeded</code> näytti suluissa <code class="language-plaintext highlighter-rouge">(changed=1)</code>.</p>
+
+<p><img src="https://github.com/user-attachments/assets/c3c90bd8-ffe4-4754-ad8b-07a668453b00" alt="removeFolde" /></p>
+
+<p>Tässä poistin luomani tiedoston <code class="language-plaintext highlighter-rouge">/tmp/simonsFolder</code></p>
+
+<p><img src="https://github.com/user-attachments/assets/f0b45845-00b0-494f-ad21-d8394c37b077" alt="apachefailstart" /></p>
+
+<p>Seuraavaksi yritin komentaa apachen käynnistettäväksi <code class="language-plaintext highlighter-rouge">service</code> funktiota käyttämällä. Tämä ei onnistunut koska en ollut ladannut Apachea.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get update
+$ sudo apt-get install apache2
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/3434862b-93ee-4e47-9b52-3b3a8e66d42f" alt="apachestart" /></p>
+
+<p>Tällä kertaa näytti vihreätä, apache2 käynnistyi latauksen jälkeen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/d69efc0c-2478-4c88-9df5-51b9e36ceeaf" alt="apacheStatus" /></p>
+
+<p>Kokeilin vielä sammuttaa apachen, tai ottaa pois käytöstä komennolla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo salt-call --local -l info state.single service.dead apache2 enable=False
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/2cfbaa02-ed15-42a5-988a-a4e43f60a4cc" alt="newUser" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/bad006a5-0084-4c6f-b08b-28d60b0319c3" alt="removeUser" /></p>
+
+<p>Näissä kahdessa kuvassa näkyy, kun ensin luon käyttäjän <code class="language-plaintext highlighter-rouge">johnwayne</code>, ja sitten poistan saman käyttäjän.</p>
+
+<p><img src="https://github.com/user-attachments/assets/b53f088a-3ee8-4003-b063-0718f02dcceb" alt="run_command" /></p>
+
+<p>Ylläolevassa kuvassa oli käytössä tilafuntio <code class="language-plaintext highlighter-rouge">cmd</code>, tällä funktiolla voidaan tehdä komento. Luodaan komento kansioon /tmp, komento joka luo tyhjän <code class="language-plaintext highlighter-rouge">foo</code> tiedoston /tmp kansion alle.</p>
+
+<h3 id="d-idempotentti-anna-esimerkki-idempotenssista-aja-salt-call-local-komentoja-analysoi-tulokset-selitä-miten-idempotenssi-ilmenee">d) Idempotentti. Anna esimerkki idempotenssista. Aja ‘salt-call –local’ komentoja, analysoi tulokset, selitä miten idempotenssi ilmenee.</h3>
+
+<ul>
+  <li>“You must make it idempotent (only run it when changes are needed).</li>
+  <li>
+    <p>creates, unless, onlyif” [1]</p>
+
+    <p>$ sudo salt-call –local -l info state.single cmd.run ‘touch /tmp/foo’ creates=”/tmp/foo”</p>
+  </li>
+</ul>
+
+<p>Tässä komennossa idempotenssi ilmenee <code class="language-plaintext highlighter-rouge">creates="/tmp/foo"</code>, jossa <code class="language-plaintext highlighter-rouge">creates</code> tarkistaa ensin jos tiedosto on olemassa tällä polulla. Mitään ei tehdä jos tiedosto on olemassa, tiedosto luodaan jos sitä ei ole olemassa.</p>
+
+<h3 id="e-herra-orja-kokeile-herra-orja-arkkitehtuuria-niin-että-herra-ja-orja-ovat-samalla-koneella">e) Herra-orja. Kokeile herra-orja arkkitehtuuria niin, että herra ja orja ovat samalla koneella.</h3>
+
+<p>Tehtävää on päivitetty ti 29.10 klo 20</p>
+
+<p>Mielestäni tein harjoitukset juuri niin, että herra ja orha olivat samalla koneella. Otan selvää seuraavalla ristiinarvioinnissa, ja seuraavalla tunnilla tästä tehtävästä.</p>
+
+<p>Ristiinarvioinnissa tuli vastaan opiskelijatoverin Hanna Burmanin <a href="https://github.com/HannaBurman/PalvelintenHallinta/blob/main/H1.md">raportti</a>, jossa hän onnistui tehtävässä. [5]</p>
+
+<p>Olin yrittänyt jo aikaisemmin komentoa <code class="language-plaintext highlighter-rouge">master$ sudo salt '*' cmd.run 'whoami'</code> josta sain virheviestin. Päätin että jatkan tehtäviä ja palaan takaisin virheviestiin.</p>
+
+<p>Tässä tehtävässä, seurasin miten Hanna onnistui tehtävässään, mutta vaikka yritin seurata samoja muokkauksia, en silti saanut samaa tulosta.</p>
+
+<p><img src="https://github.com/user-attachments/assets/09d9d2ab-783a-4cd3-9440-4255220d3588" alt="Näyttökuva 2024-10-29 kello 20 03 10" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/e0324cd1-5986-49fc-afa3-d5d8c943f52d" alt="1" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/cb4a0a0b-2364-486c-9adf-4fc3c24c62b9" alt="2" /></p>
+
+<p>[1][2][4]</p>
+
+<h1 id="lähteet">Lähteet</h1>
+<ol>
+  <li>https://terokarvinen.com/2021/salt-run-command-locally/#instructions</li>
+  <li>https://terokarvinen.com/2018/03/28/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/</li>
+  <li>https://docs.saltproject.io/en/latest/topics/salt_system_architecture.html</li>
+  <li>https://docs.saltproject.io/en/latest/ref/states/all/index.html#all-salt-states</li>
+  <li>https://github.com/HannaBurman/PalvelintenHallinta/blob/main/H1.md</li>
+</ol>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

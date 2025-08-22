@@ -1,0 +1,486 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Daemon
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Let them do your bidding for you">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Daemon</h1>
+        
+        <p>Let them do your bidding for you</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/confman">Previous Page</a></p>
+
+<h1 id="pkg-file-service">Pkg-file-service</h1>
+
+<p>Palvelinten hallinta ICI001AS3A-3010 - Syksy 2024</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>päivä</th>
+      <th>aihe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-11-14 w46 Thu</td>
+      <td><strong>Pkg-file-service</strong> eli demonien hallinta. Käsin tehdyn konfiguraation automatisointi. Aikajanan käyttö muutosten tunnistamisessa. Omien modulien aloitus.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li><strong>Tietokone: MacBook Air 2017, INTEL</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: macOS Monterey 12.7.5</li>
+      <li>Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5</li>
+      <li>Muisti: 8 Gt 1600 MHz DDR3</li>
+      <li>Näytönohjain: Intel HD Graphics 6000, 1536 Mt</li>
+    </ul>
+  </li>
+  <li><strong>Ympäristö: VirtualBox 7</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: Ubuntu 18.04.3 LTS</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="h3-demoni-tehtävä">h3 Demoni <a href="https://terokarvinen.com/palvelinten-hallinta/#h3-demoni">Tehtävä</a></h2>
+
+<ul>
+  <li>Isännän nimi ja ip: server1, 192.168.56.4</li>
+  <li>Minion nimi ja ip: server2, 192.168.56.5</li>
+</ul>
+
+<p>Tein tehtävät Ke 20.11 klo 10 - 13.55</p>
+
+<p>Päivitykset ke 20.11, palautuksen jälkeen klo 14:30 - 15:30</p>
+
+<ul>
+  <li>Vaihdoin virtuaalikoneen nimeä. Koska olin käyttänyt Ubuntia Debianin sijasta.</li>
+  <li>Lisätty aika jolloin tehtäviä on tehty, lisätty tekstiä joka selventää tehtävän aikajanaa</li>
+  <li>Lähdemerkintöjä korjattu</li>
+  <li>Kuvat lisätty Github kansioon ja linkattu tähän tiedostoon. Kuvat katosivat commitin jälkeen</li>
+</ul>
+
+<p>klo 20 - 20:30</p>
+
+<ul>
+  <li>jatkettu g) tehtävää</li>
+</ul>
+
+<p>[1]</p>
+
+<h3 id="x-lue-ja-tiivistä-pkg-file-service--control-daemons-with-salt--change-ssh-server-port">x) Lue ja tiivistä <a href="https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/">Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port</a></h3>
+
+<p>SSH, Secure SHell. Turvallinen tapa ottaa yhteyttä koneisiin. Tässä artikkelissa käydään läpi Masterin SSHd konfiguraatiota ja miten SSHd:tä voi hyödyntää Master-minion arkkitehtuurissa. [2]</p>
+
+<h3 id="a-apache-easy-mode-asenna-apache-korvaa-sen-testisivu-ja-varmista-että-demoni-käynnistyy">a) Apache easy mode. Asenna Apache, korvaa sen testisivu ja varmista, että demoni käynnistyy</h3>
+
+<p><strong>Apachen asennus ja sivun tarjoilu manuaalisesti.</strong> Käytän viime viikon raporttia Apachen manuaalisesta asennuksesta ja käynnistyksestä.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ apt-get update
+$ apt-get install apache2
+</code></pre></div></div>
+
+<p>Tarkistin aluksi että Apachen sivu toimii ja näkyy</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.07.09.png" alt="Näyttökuva 2024-11-12 kello 0 07 09" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">curl localhost</code> komento tulosti Apachen kotisivun, <code class="language-plaintext highlighter-rouge">curl -I localhost</code> komento tulosti lyhyemmän ytimekkään vastauksen.</p>
+
+<p>Kaikki näytti olevan OK! Voin aloittaa tekemällä kansion käyttäjän hakemistoon:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo mkdir -p /home/leonardo/public_html/examplevagrant.com
+</code></pre></div></div>
+
+<p>Apache sivujen konfiguraatio:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudoedit /etc/apache2/sites-available/examplevagrant.com.conf 
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.19.42.png" alt="Näyttökuva 2024-11-12 kello 0 19 42" /></p>
+
+<p>Etusivu <code class="language-plaintext highlighter-rouge">index.html</code> sisältö:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.28.07.png" alt="Näyttökuva 2024-11-12 kello 0 28 07" /></p>
+
+<p>Otin Apachen oletussivun pois käytöstä ja otin omat sivut käyttöön komennoilla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo a2dissite 000-default.conf
+$ sudo a2ensite examplevagrant.com.conf
+</code></pre></div></div>
+
+<p>Jonka jälkeen Apache täytyy käynnistää uudelleen komennolla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%205.18.03.png" alt="kuva" /></p>
+
+<p>Varmistetaan vielä että etusivua pystyy muokkaamaan ilman sudoa <a href="https://linux.die.net/man/1/chown"><code class="language-plaintext highlighter-rouge">chown</code></a></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.39.07.png" alt="Näyttökuva 2024-11-12 kello 0 39 07" /></p>
+
+<p>Vaihdoin kansion uudeksi omistajaksi käyttäjän <code class="language-plaintext highlighter-rouge">leonardo</code>, näin käyttäjä pystyy muokkaamaan ilman sudoa.</p>
+
+<p>Eli, 1. käyttäjä on luotu, 2. Apache asennettu, 3. Apache on käynnissä (varmistus), 4. Käyttäjä pystyy muokkaamaan omassa hakemistossa olevia tiedostoja URL:n avulla, 5. Apachen oletus .html sivu on muokattu, 6. Käyttäjän hakemistoon on luotu kansio, jossa käyttäjä voi muokkaa sivuja.</p>
+
+<p><strong>Automatisoitu Apachen asennus ja sivun tarjoilu.</strong></p>
+
+<p>Tehtävää jatketaan edellisen viikon tehtävien jälkeen, samoilla asetuksilla ja konfiguraatioilla. Ainoastaan ajoin <code class="language-plaintext highlighter-rouge">vagrant destroy</code> joka tuhosi edellisen viikon master-minion serverit. Käynnistin ne uudestaan <code class="language-plaintext highlighter-rouge">vagrant up</code> komennolla, <strong>HUOM! tästä syystä asetustiedoistoissa olevat polut ja nimet ovat erilaisia kuin manuaalisen Apache easy mode asennuksessa.</strong></p>
+
+<p>Tarkistin että uudessa minion koneessa ei ole Apachea.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/apacheNOTinMin.png" alt="apacheNOTinMin" /></p>
+
+<p>Tässä osassa noudatin opettajan <a href="https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/">Apache User Homepages Automatically – Salt Package-File-Service Example</a> ohjeita. [3]</p>
+
+<p>Sivulla on kaksi ohjetta miten kirjoittaa <code class="language-plaintext highlighter-rouge">init.sls</code> tiedostoon, ensimmäinen on simppeli ja nopea, toinen on hieman pidempi mutta luotettavempi tapa.</p>
+
+<p>Ensiksi tein tiedosto <code class="language-plaintext highlighter-rouge">init.sls</code> polkuun <code class="language-plaintext highlighter-rouge">/srv/salt/apache/</code>, sisältöön laitoin:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apache2:
+ pkg.installed
+/var/www/html/index.html:
+ file.managed:
+   - source: salt://apache/default-index.html
+/etc/apache2/mods-enabled/userdir.conf:
+ file.symlink:
+   - target: ../mods-available/userdir.conf
+/etc/apache2/mods-enabled/userdir.load:
+ file.symlink:
+   - target: ../mods-available/userdir.load
+apache2service:
+ service.running:
+   - name: apache2
+   - watch:
+     - file: /etc/apache2/mods-enabled/userdir.conf
+     - file: /etc/apache2/mods-enabled/userdir.load
+</code></pre></div></div>
+
+<p>Tarkoituksena myös vaihtaa Apachen oletussivu. Tämä tapahtuu tilafunktiolla <code class="language-plaintext highlighter-rouge">file.managed</code>. Siihen voidaan kirjoittaa HTML koodia:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;title&gt;Testi&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Testataan että toimii&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p>Master koneelta komento:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo salt '*' state.apply apache
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/apacheinstalled.png" alt="apacheinstalled.png" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/apacheSiteUpdate.png" alt="apacheSiteUpdate" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/userDir_apacheDaemon.png" alt="userDir_apacheDaemon" /></p>
+
+<p>Success! Ensin <code class="language-plaintext highlighter-rouge">pkg.installed</code> latasi ja oletuksena käynnisti samalla Apachen, jonka jälkeen <code class="language-plaintext highlighter-rouge">file.managed</code> muutti Apachen oletussivua, uuden sisällön olin kirjoittanut polkuun <code class="language-plaintext highlighter-rouge">/srv/salt/apache/</code> ja nimesin tiedoston ohjeiden mukaisesti <code class="language-plaintext highlighter-rouge">default-index.html</code>.</p>
+
+<p>Tilafunktio <code class="language-plaintext highlighter-rouge">file.symlink</code> oli uusi minulle. <a href="https://en.wikipedia.org/wiki/Symbolic_link">Wikipedian</a> sivuilla symlink tai symbolic link: “In computing, a symbolic link (also symlink or soft link) is a file whose purpose is to point to a file or directory (called the “target”) by specifying a path thereto.” [4]</p>
+
+<p>Perehdyn tilafunktioon enemmän tehtävien jälkeen.</p>
+
+<p>Viimeisenä <code class="language-plaintext highlighter-rouge">service.running</code>varmisti että Apache on käynnissä.</p>
+
+<h3 id="b-sshouto-lisää-uusi-portti-jossa-sshd-kuuntelee">b) SSHouto. Lisää uusi portti, jossa SSHd kuuntelee</h3>
+
+<p>Salt asennuksen mukana tulee tarvittava SSH.</p>
+
+<p>Ohjeet tehtävään löytyvät opettajan sivulta <a href="https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/">Pkg-File-Service – Control Daemons with Salt – Change SSH Server Port</a>. [5]</p>
+
+<p>Loin <code class="language-plaintext highlighter-rouge">sshd.sls</code> tiedoston polkuun <code class="language-plaintext highlighter-rouge">/srv/salt/sshd.sls</code>, tiedoston sisältö:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openssh-server:
+  pkg.installed
+/etc/ssh/sshd_config:
+ file.managed:
+   - source: salt://sshd_config
+sshd:
+ service.running:
+   - watch:
+     - file: /etc/ssh/sshd_config
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">pkg.installed</code> funktio asentaa SSH:n, <code class="language-plaintext highlighter-rouge">service.running</code> varmistaa että se on käynnissä ja toiminnassa.</p>
+
+<p>Seuraavaksi, lähdin muokkaamaan <code class="language-plaintext highlighter-rouge">sshd_config</code> konfiguraatiotiedostoa, jonka sijainti oli <code class="language-plaintext highlighter-rouge">/etc/ssh/sshd_config</code>.</p>
+
+<p>Tehtävänannossa opettajan vinkki “Esimerkkidokumenteissa olevat demonien asetustiedostot tuskin toimivat juuri omassa järjestelmässä”. [1]</p>
+
+<p>Muokkasin tiedostoa, lisäämällä portin 2727, ja ottamalla kommentit pois useammasta rivistä, jotta se olisi samanlainen kuin opettajalla. konfiguraatiotiedostoni näytti tältä:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Port 22
+Port 2727
+
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+UsePAM yes
+X11Forwarding yes
+PrintMotd no
+PrintLastLog yes
+TCPKeepAlive yes
+
+AcceptEnv LANG LC_*
+Subsystem       sftp    /usr/lib/openssh/sftp-server
+
+UseDNS no
+GSSAPIAuthentication no
+</code></pre></div></div>
+
+<p>Tämän jälkeen ajoin:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo salt '*' state.apply sshd
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/sshd_failed.png" alt="sshd_failed" /></p>
+
+<p>Mistähän kiikastaa?</p>
+
+<p>Ensiksi tarkistin että tiedoston sisällössä ei ole mitään häikkää, kaikki näytti olevan OK. Kuitenkin Salt kertoo ettei löytänyt tiedostoa.</p>
+
+<p>Tarkistin oliko tiedoston olemassa.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls -l /srv/salt/sshd_config
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/nosshd_config.png" alt="nosshd_config" /></p>
+
+<p>Tässä vaiheessa huomasin, että konfiguraatio tiedosto jota muokkasin ei ollut Saltin polulla.</p>
+
+<p><code class="language-plaintext highlighter-rouge">salt://sshd_config</code> etsii polulta <code class="language-plaintext highlighter-rouge">/srv/salt....</code>, jossa tehtiin konfiguraatiotiedosto. Konfiguraatio tiedosto jota muokkasin oli polulla <code class="language-plaintext highlighter-rouge">/etc/salt...</code>.</p>
+
+<p><strong>Kertausta, <a href="https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited"><code class="language-plaintext highlighter-rouge">/etc/</code>-kansion alta löytyy kaikki järjestelmän asetukset</a></strong>. Jotta olisin voinut käyttää omaa moduulia, minun tuli kopioida tiedosto oikeaan kansioon. [6]</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo cp /etc/ssh/sshd_config /srv/salt/sshd_config
+</code></pre></div></div>
+
+<p>ja ajetaan uusiksi</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo salt '*' state.apply sshd
+</code></pre></div></div>
+
+<p>Success!</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/SSH_success.png" alt="SSH_success" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/SSH_succes1.png" alt="SSH_succes1" /></p>
+
+<p><strong>Päivitys: Lisätty kuva sshd testistä</strong> 12.12.2024</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/sshd_config.png?raw=true" alt="sshdtesting" /></p>
+
+<h3 id="c-oma-moduli-valitse-aihe-omalle-modulille">c) Oma moduli. Valitse aihe omalle modulille</h3>
+
+<p>Haluan tehdä moduulin joka asentaa VPN ja ottaa se käyttöön.</p>
+
+<h3 id="d-virtualhost-asenna-apache-tarjoilemaan-weppisivua">d) VirtualHost. Asenna Apache tarjoilemaan weppisivua</h3>
+
+<p>Päätin jatkaa samoilla asetuksilla, ja lisätä uudet konfiguraatiot edellisten päälle.</p>
+
+<p>Hieman hienosäätöä:</p>
+
+<p>Käyn käyttäjälle userin/<code class="language-plaintext highlighter-rouge">init.sls</code>- tiedostonm ja lisäsin tilafunktiot <code class="language-plaintext highlighter-rouge">user.present</code> <code class="language-plaintext highlighter-rouge">file.directory</code> <code class="language-plaintext highlighter-rouge">create-index</code></p>
+
+<p>Komento jolla salt ajetaan:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo salt '*' state.apply
+</code></pre></div></div>
+
+<p>Ensimmäisellä juoksulla oli ongelmia <code class="language-plaintext highlighter-rouge">user.present</code> tilafunktion kanssa. Unohdin kirjata ylös tästä virheestä, mutta ongelma oli syntaksissa. Vaihdoin sen yksinkertaisesti:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    leonardo:
+      user.present
+</code></pre></div></div>
+
+<p>Tämä yksinkertaisempi syntaksi toimi loistavati.</p>
+
+<p>Toisella juoksulla Salt onnistui tekemään kaikki paitsi:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       ID: create-index
+Function: file.managed
+    Name: /home/leonardo/public_html/index.html
+  Result: False
+ Comment: Source file salt://apache/index.html not found
+ Started: 11:07:54.885771
+Duration: 10.489 ms
+ Changes:
+</code></pre></div></div>
+
+<p>Tämän funktion piti tehdä uusi <code class="language-plaintext highlighter-rouge">index.html</code> tiedosto, joka olisi Apachen uusi etusivu. Edellisessä tehtävässä, tiedosto johon vaihdoin Apachen etusivun oli nimeltään <code class="language-plaintext highlighter-rouge">default-index.html</code>. Vaihdoin sen lyhyempään muotoon kuten konfiguraatiossa <code class="language-plaintext highlighter-rouge">index.html</code>, ja sen sisältö</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/indexSisalto.png" alt="indexSisalto" /></p>
+
+<p>Ajoin salt komennon uudestaan, tällä kertaa virheenä tuli edellisessä tehtävässä konfiguraatioon unohdunut tilafunktio <code class="language-plaintext highlighter-rouge">file.managed</code></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/unohtunutTila.png" alt="unohtunutTila" /></p>
+
+<p>Poistin tilafunktion tiedostosta <code class="language-plaintext highlighter-rouge">init.sls</code>, joka oli polussa <code class="language-plaintext highlighter-rouge">/srv/salt/apache/</code></p>
+
+<p>Success!</p>
+
+<p>7 tilafunktiota suoritettu onnistuneesti, ja todettu idempotenssi.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/virtualHostsuccess.png" alt="virtualHostsuccess" /></p>
+
+<p>Tarkistin vielä minion koneelta:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/minioni.png" alt="minioni" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/oikeudet.png" alt="oikeudet" /></p>
+
+<p>Näyttää hyvältä!</p>
+
+<h3 id="g-vapaaehtoinen-haastava-postgresql-asenna-postgresql-tietokannanhallintajärjestelmä">g) Vapaaehtoinen, haastava: PostgreSQL. Asenna PostgreSQL-tietokannanhallintajärjestelmä.</h3>
+
+<p>Manuaalinen asennus:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get -y install postgresql
+$ sudo -u postgres createdb $(whoami)
+$ sudo -u postgres createuser $(whoami)
+
+$ psql
+</code></pre></div></div>
+
+<p>SQL</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>=&gt; CREATE TABLE students (id SERIAL PRIMARY KEY, name VARCHAR(200));
+=&gt; INSERT INTO students(name) VALUES ('student_name');
+=&gt; \d
+=&gt; \d students
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/manualPostgre.png" alt="manualPostgre.png" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt purge postgresql
+</code></pre></div></div>
+<hr />
+
+<p>Automaattinen asennus:</p>
+
+<p>Tein uuden tiedoston PostgreSQL:lle. <code class="language-plaintext highlighter-rouge">/srv/salt/postgres/init.sls</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgresql:
+  pkg.installed
+
+sudo salt '*' state.apply postgres
+</code></pre></div></div>
+
+<p><strong>Tehtävä viimeistelty 12.12.2024</strong></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/postgreinstall.png" alt="postgreinstall.png" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/postgresql.png?raw=true" alt="postgreInstall&amp;User" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/postgresql2.png?raw=true" alt="postgresqlDB" /></p>
+
+<p>[7]</p>
+
+<h1 id="lähteet">Lähteet</h1>
+
+<ol>
+  <li>https://terokarvinen.com/palvelinten-hallinta/#h3-demoni</li>
+  <li>https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/</li>
+  <li>https://terokarvinen.com/2018/apache-user-homepages-automatically-salt-package-file-service-example/</li>
+  <li>https://en.wikipedia.org/wiki/Symbolic_link</li>
+  <li>https://terokarvinen.com/2018/pkg-file-service-control-daemons-with-salt-change-ssh-server-port/</li>
+  <li>https://terokarvinen.com/2020/command-line-basics-revisited/?fromSearch=command%20line%20basics%20revisited</li>
+  <li>https://docs.saltproject.io
+    <ul>
+      <li>https://docs.saltproject.io/en/latest/ref/states/all/salt.states.postgres_user.html</li>
+      <li>https://docs.saltproject.io/en/latest/ref/states/all/salt.states.postgres_database.html</li>
+    </ul>
+  </li>
+</ol>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Infra-as-Code
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Echo from the edge of the cyberworld">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Infra-as-Code</h1>
+        
+        <p>Echo from the edge of the cyberworld</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/confman">Previous Page</a></p>
+
+<h1 id="verkon-yli">Verkon yli</h1>
+
+<p>Palvelinten hallinta ICI001AS3A-3010 - Syksy 2024</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>päivä</th>
+      <th>aihe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2024-10-31 w44 Thu</td>
+      <td><strong>Verkon yli.</strong> Herra-orja -arkkitehtuuri verkon yli. Orjan tavoittaminen tuntemattomasta osoitteesta, NAT ja tulimuurin takaa. Harjoitusympäristöjen rakentaminen Vagrantilla. Vianselvitys verkkoyhteydessä.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li><strong>Tietokone: MacBook Air 2017, INTEL</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: macOS Monterey 12.7.5</li>
+      <li>Prosessori: 1,8 GHz Kaksiytiminen Intel Core i5</li>
+      <li>Muisti: 8 Gt 1600 MHz DDR3</li>
+      <li>Näytönohjain: Intel HD Graphics 6000, 1536 Mt</li>
+    </ul>
+  </li>
+  <li><strong>Ympäristö: VirtualBox 7</strong>
+    <ul>
+      <li>Käyttöjärjestelmä: Ubuntu 18.04.3 LTS</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="h2-infra-as-code">h2 Infra-as-code</h2>
+
+<p><a href="https://terokarvinen.com/palvelinten-hallinta/#h2-infra-as-code">Tehtävänanto</a></p>
+
+<p>Olin perehtynyt viikon aiheisiin muutaman päivän ennen tehtävien tekoa. Aloitin tehtävien tekemisen Ma 11.11 klo 14:00 ja olin valmis Ti 12.11 0:30, pidin satunnaisesti taukoa ja jatkoin. Pitkät taukovälit klo 16-18 ja 19:30-22:00</p>
+
+<h3 id="x-lue-ja-tiivistä">x) Lue ja tiivistä</h3>
+
+<ul>
+  <li>Karvinen 2021: <a href="https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/">Two Machine Virtual Network With Debian 11 Bullseye and Vagrant</a>. Tämä artikkeli näyttää miten Vagrantin avulla, voi saada nopeasti ja helposti kaksi tietokonetta virtuaaliympäristössä.[1]</li>
+  <li>Karvinen 2018: <a href="https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/?fromSearch=salt%20quickstart%20salt%20stack%20master%20and%20slave%20on%20ubuntu%20linux">Salt Quickstart – Salt Stack Master and Slave on Ubuntu Linux</a>. Tässä artikkelissa on esimerkki miten voidaan hallita tietokoneita Master-Minion tekniikkaa hyödyntäen.[1]</li>
+  <li>Karvinen 2014: <a href="https://terokarvinen.com/2024/hello-salt-infra-as-code/">Hello Salt Infra-as-Code</a>. Tässä artikkelista löytyy varsinaiset komennot sekä varsinaiset tilafunktiot. pkg, file, service, user &amp; cmd. Opettajan huomio, ‘Moduulit kannattaa laittaa siistiin polkuun esim. Hyvä: “/srv/salt/hello/init.sls” eli moduli “hello”’ [1]</li>
+  <li>Karvinen 2023: <a href="https://terokarvinen.com/2023/salt-vagrant/#infra-as-code---your-wishes-as-a-text-file">Salt Vagrant - automatically provision one master and two slaves</a>
+    <ul>
+      <li>Infra as Code - Your wishes as a text file
+        <ul>
+          <li>Miten tehdä infrakoodi kansioon ja ajaa se</li>
+        </ul>
+      </li>
+      <li>top.sls - What Slave Runs What States
+        <ul>
+          <li>Miten tehdä infrakoodi kansioon ja sisällyttää tilafunktiot ajettavaan tiedostoon [1]</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Salt contributors: <a href="https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml">Salt overview</a> [2]
+    <ul>
+      <li>YAML:ssa eri säännöt kuin yleisimmissä ohjelmointisyntaksissa</li>
+      <li>tabulaattorin sijasta käytetään välilyöntiä</li>
+      <li>Käytetään <code class="language-plaintext highlighter-rouge">key: value</code> pareja</li>
+      <li>kirjainten koolla on väliä</li>
+    </ul>
+  </li>
+  <li>YAML rakenne
+    <ul>
+      <li>Kolme yleistä tyyppiä</li>
+      <li><code class="language-plaintext highlighter-rouge">key: value</code> jossa arvon kohtalla voi olla numero, teksti tai boolean arvo</li>
+      <li><code class="language-plaintext highlighter-rouge">key:</code> parin kanssa voi olla lista arvoja, jossa jokainen arvo on eroteltu 1. uudella rivillä 2. väliviivalla 3. kahdella välilyönnillä</li>
+      <li><code class="language-plaintext highlighter-rouge">key:value</code> pareja voi olla useampia, niinkuin ohjelmoinnin dictionarissa</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="a-hello-vagrant">a) Hello Vagrant!</h3>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2014.08.40.png" alt="Näyttökuva 2024-11-11 kello 14 08 40" /></p>
+
+<p>Vagrant on asennettuna isäntäkoneeseen.</p>
+
+<h3 id="b-linux-vagrant-tee-vagrantilla-uusi-linux-virtuaalikone">b) Linux Vagrant. Tee Vagrantilla uusi Linux-virtuaalikone.</h3>
+
+<p>Vagrantin voi asentaa Macille (intel) seuraavilla komennoilla</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ brew tap hashicorp/tap
+$ brew install hashicorp/tap/hashicorp-vagrant
+</code></pre></div></div>
+
+<p>Tai sen voi asentaa sivulta https://developer.hashicorp.com/vagrant/install [3]</p>
+
+<p>Tein uuden kansion <code class="language-plaintext highlighter-rouge">vagrantStart</code>, ja siirryin kansioon. Tämän jälkeen aloitin Vagrantin komennolla</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant init hashicorp/bionic64
+$ vagrant up 
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2014.31.37.png" alt="Näyttökuva 2024-11-11 kello 14 31 37" /></p>
+
+<p>Toimii, ja vagrant käynnisti Virtualboxissa uuden virtuaalikoneen <code class="language-plaintext highlighter-rouge">vagrantStart_default_...</code></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2014.15.38.png" alt="Näyttökuva 2024-11-11 kello 14 15 38" /></p>
+
+<p>[4]</p>
+
+<h3 id="c-kaksin-kaunihimpi">c) Kaksin kaunihimpi.</h3>
+
+<p>Vagrantin käynnistys teki uuden tiedoston <code class="language-plaintext highlighter-rouge">Vagrantfile</code>, tähän tiedostoon tein konfiguraatiot</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Vagrant.configure("2") do |config|
+  config.vm.define "server1" do |server1|
+      server1.vm.box = "hashicorp/bionic64"
+      server1.vm.network "private_network", ip: "192.168.56.4"
+  end
+
+  config.vm.define "server2" do |server2|
+      server2.vm.box = "hashicorp/bionic64"
+      server2.vm.network "private_network", ip: "192.168.56.5"
+  end
+end
+</code></pre></div></div>
+
+<p>config.vm.define “server1” ja config.vm.define “server2” määrittelevät kaksi virtuaalikonetta nimeltä <code class="language-plaintext highlighter-rouge">server1</code> ja <code class="language-plaintext highlighter-rouge">server2</code></p>
+
+<p>Seuraavaksi käynnistin Vagrantin.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant up
+</code></pre></div></div>
+
+<p>Varmistin että koneet pingaavat toisiaan, tein vuorotellen kirjautumalla ensiksi <code class="language-plaintext highlighter-rouge">server1</code> ja sitten <code class="language-plaintext highlighter-rouge">server2</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant ssh server1
+$ vagrant ssh server2
+</code></pre></div></div>
+
+<p>Pingaus <code class="language-plaintext highlighter-rouge">server1</code> koneesta</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.18.27.png" alt="Näyttökuva 2024-11-11 kello 16 18 27" /></p>
+
+<p>Pingaus <code class="language-plaintext highlighter-rouge">server2</code> koneesta</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.19.47.png" alt="Näyttökuva 2024-11-11 kello 16 19 47" /></p>
+
+<h3 id="d-herra-orja-verkossa">d) Herra-orja verkossa.</h3>
+
+<p>Käynnistin ensimmäisen vagrant koneen <code class="language-plaintext highlighter-rouge">server1</code>, johon asennan salt-master.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant ssh server1
+$ sudo apt-get update
+$ sudo apt-get install salt-master
+</code></pre></div></div>
+
+<p>Tarkistin salt-masterin statuksen</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.30.52.png" alt="Näyttökuva 2024-11-11 kello 16 30 52" /></p>
+
+<p>Tämä jälkeen siirryin toiseen vagrant koneeseen <code class="language-plaintext highlighter-rouge">server2</code>, tähän asensin salt-minionin ja samalla muokkasin /etc/salt/minion -tiedostoa, lisäämällä masterin osoitteen.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant ssh server2
+$ sudo apt-get update
+$ sudo apt-get install salt-minion
+$ sudoedit /etc/salt/minion
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.35.55.png" alt="Näyttökuva 2024-11-11 kello 16 35 55" /></p>
+
+<p>Tarkistin vielä että <code class="language-plaintext highlighter-rouge">minion</code> on aktiivinen</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.37.12.png" alt="Näyttökuva 2024-11-11 kello 16 37 12" /></p>
+
+<p>Siirryin vielä takaisin <code class="language-plaintext highlighter-rouge">server1</code>jossa on salt-master, jossa hyväksyin salt-minion avaimen.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2016.40.19.png" alt="Näyttökuva 2024-11-11 kello 16 40 19" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo salt-key -A</code> komennolla tarkistin avainpyynnöt, ja hyväksyin sen.</p>
+
+<p>Kokeilin vielä pingaa minionia, mutta sain viestin että masteri ei vastaa. Kävin tarkistamassa konfiguraatiot <code class="language-plaintext highlighter-rouge">/minion</code> tiedostosta, että on oikea master osoite, ja että palomuurit 4505 ja 4506/tcp ovat auki.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2017.18.39.png" alt="Näyttökuva 2024-11-11 kello 17 18 39" /></p>
+
+<p>salt-minion</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2017.22.30.png" alt="Näyttökuva 2024-11-11 kello 17 22 30" /></p>
+
+<p>salt-master</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2017.21.38.png" alt="Näyttökuva 2024-11-11 kello 17 21 38" /></p>
+
+<p>Tässä vaiheessa huomasin että enhän pääse itse enää kumpaakaan koneeseen. Vain portit 4505 ja 4506 portit jäivät auki, eikä portti 22/tcp ollut auki, josta itse pääsisin sisään.</p>
+
+<p>Tuhosin nykyisen vagrantin ja loin uudestaan</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vagrant destroy -f
+$ vagrant up
+</code></pre></div></div>
+
+<p>Aloitin tehtävän uudestaan, ja tarkistin että asetukset ja yhteydet ovat oikein.</p>
+
+<p>Vagrantfile:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2019.53.57.png" alt="Näyttökuva 2024-11-11 kello 19 53 57" /></p>
+
+<p>Tarkistin että <code class="language-plaintext highlighter-rouge">salt-master</code> hyväksytyt avaimet ja palomuurin:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2019.58.18.png" alt="Näyttökuva 2024-11-11 kello 19 58 18" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">/etc/salt/minion</code> konfiguraatio:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2020.00.45.png" alt="Näyttökuva 2024-11-11 kello 20 00 45" /></p>
+
+<p>Tällä kertaa kokeilin lisätä kokeilin komentoa <code class="language-plaintext highlighter-rouge">sudo salt '*' test.ping</code></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2020.14.54.png" alt="Näyttökuva 2024-11-11 kello 20 14 54" /></p>
+
+<p>Master voi komentaa minionia. Se näkyi komennolla <code class="language-plaintext highlighter-rouge">sudo salt '*' cmd.run 'whoami'</code></p>
+
+<p>Tämä näytti toimivan. Ihmettelin kuitenkin miksi pingi ei lähde komennolla <code class="language-plaintext highlighter-rouge">sudo salt 'server2' test.ping</code></p>
+
+<p><strong>VagrantFile</strong> tietokoneen nimi oli <code class="language-plaintext highlighter-rouge">vagrant</code></p>
+
+<h3 id="e-hei-infrakoodi">e) Hei infrakoodi!</h3>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/run_localCmd.png?raw=true" alt="local1" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/locally_file.png?raw=true" alt="local2" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/remove.png?raw=true" alt="local3" /></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/daemon/htop_idempotency.png?raw=true" alt="local4" /></p>
+
+<h3 id="f-aja-esimerkki-sls-tiedostosi-verkon-yli-orjalla">f) Aja esimerkki sls-tiedostosi verkon yli orjalla.</h3>
+
+<p>Ohjeet: <a href="https://terokarvinen.com/2021/salt-run-command-locally/">Run Salt Command Locally</a></p>
+
+<p>Aloitin tekemällä kansion</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo mkdir -p /srv/salt/hello
+$ sudoedit /srv/salt/hello/init.sls
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">/srv/salt/hello/init.sls</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/tmp/iaas:
+  file.managed
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2020.32.39.png" alt="Näyttökuva 2024-11-11 kello 20 32 39" /></p>
+
+<p>Kuvassa näkyy, että masterin kone ohjaa minionin tekemään kansion <code class="language-plaintext highlighter-rouge">/tmp</code> kansioon <code class="language-plaintext highlighter-rouge">iaas</code> tiedoston. Tässä kävi myös ilmi idempotenssi. Kävin tarkistamassa minionistä että tiedosto on luotu oikeaan paikkaan. Seuraavassa kuvassa näkyy <code class="language-plaintext highlighter-rouge">iaas</code> tiedosto on toisena listalla.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2020.37.47.png" alt="Näyttökuva 2024-11-11 kello 20 37 47" /></p>
+
+<p>[1]</p>
+
+<h3 id="g-tee-sls-tiedosto-joka-käyttää-vähintään-kahta-eri-tilafunktiota-näistä-package-file-service-user">g) Tee sls-tiedosto, joka käyttää vähintään kahta eri tilafunktiota näistä: package, file, service, user.</h3>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2021.12.05.png" alt="Näyttökuva 2024-11-11 kello 21 12 05" /></p>
+
+<p>Tässä sls-tiedostossa käytin useampaa tilafunktiota.</p>
+
+<ul>
+  <li>file.managed, oli edellisestä tehtävästä.</li>
+  <li>seuraava pkg.installed tilafunktiolla koitin asentaa Apache weppipalvelimen</li>
+  <li>service.running tilafunktiolla halusin käynnistää Apachen</li>
+  <li>user.present tilafunktiolla taas tein käyttäjän ‘leonardo’</li>
+</ul>
+
+<p>Tulos:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.04.34.png" alt="Näyttökuva 2024-11-11 kello 23 04 34" /></p>
+
+<p>jatkuu…</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.05.34.png" alt="Näyttökuva 2024-11-11 kello 23 05 34" /></p>
+
+<p>Kuvassa näkyy <code class="language-plaintext highlighter-rouge">file.managed</code> funktio vihreänä, eli se oli jo olemassa.</p>
+
+<p>Seuraavaksi Vagrant asensi <code class="language-plaintext highlighter-rouge">apache2</code>-weppipalvelimen onnistuneesti, tässä kesti vähän pidempään kuin aikaisemmissa ajoissa. Duration: 35376.96 ms</p>
+
+<p><code class="language-plaintext highlighter-rouge">service.running</code>-funktio ei onnistunut. Syynä oli että, Vagrant ei tunnistanut nimeä <code class="language-plaintext highlighter-rouge">apache2_service</code>. Tarkoituksena oli erottaa <code class="language-plaintext highlighter-rouge">pkg.installed</code> ja <code class="language-plaintext highlighter-rouge">service.running</code> tilafunktioiden nimet.</p>
+
+<p>Viimeisenä Vagrant teki käyttäjän ‘leonardo’ tilafunktiolla <code class="language-plaintext highlighter-rouge">user.present</code></p>
+
+<p>Kävin tarkistamassa <a href="https://terokarvinen.com/2023/salt-vagrant/#topsls---what-slave-runs-what-states">Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves</a>, YAML syntaksia, ja korjasin <code class="language-plaintext highlighter-rouge">init.sls</code> tiedostoa [1]</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.17.35.png" alt="Näyttökuva 2024-11-11 kello 23 17 35" /></p>
+
+<p>Korjattu syntaksi:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apache2_service:
+  service.running:
+    - name: apache2
+</code></pre></div></div>
+
+<p>Tällä kertaa kaikki näytti vihreätä. Apachen lataaminen myös käynnistää palvelimen, joten se oli jo päällä joten Vagrant todisti sen idempotenssin.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.20.28.png" alt="Näyttökuva 2024-11-11 kello 23 20 28" /></p>
+
+<p>Kävin tarkistamassa vielä minion koneelta että Vagrant todella teki kaiken:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.22.36.png" alt="Näyttökuva 2024-11-11 kello 23 22 36" /></p>
+
+<h3 id="h-top-file">h) Top file.</h3>
+
+<p>Tässä tehtävässä tarkoituksena oli automatisoida yhdestä tiedostosta vähintään kahden tilan / modulin ajaminen.</p>
+
+<p><a href="https://terokarvinen.com/2023/salt-vagrant/#topsls---what-slave-runs-what-states">Karvinen 2023: Salt Vagrant - automatically provision one master and two slaves</a> [1] Tästä löytyi varsin helpot ohjeet tähän.</p>
+
+<p><code class="language-plaintext highlighter-rouge">hello</code> kansio oli jo luotu edellisessä tehtävässä, ja loin uuden kansion <code class="language-plaintext highlighter-rouge">moikka</code> ja lisäsin siihen <code class="language-plaintext highlighter-rouge">init.sls</code> tiedoston. Seuraavaksi tein <code class="language-plaintext highlighter-rouge">/srv/salt</code> kansioon <code class="language-plaintext highlighter-rouge">top.sls</code> tiedoston. Kuvassa näkyy tiedostojen sisällöt:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.50.00.png" alt="Näyttökuva 2024-11-11 kello 23 50 00" /></p>
+
+<p>Tämän jälkeen pystyin ajamaan lyhyemmän komennon <code class="language-plaintext highlighter-rouge">sudo salt '*' state.apply</code>.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.54.37.png" alt="Näyttökuva 2024-11-11 kello 23 54 37" /></p>
+
+<p>Vagrant näköjään tunnistaa <code class="language-plaintext highlighter-rouge">top.sls</code>, ja että sieltä löytyy ajettavat tilafunktiot. Huomasin tämän koska, aluksi <code class="language-plaintext highlighter-rouge">top.sls</code> tiedosto oli väärin sijoitettu polkuun <code class="language-plaintext highlighter-rouge">/srv/salt/top/top.sls</code>, josta sain virheviestin</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-11%20kello%2023.53.24.png" alt="Näyttökuva 2024-11-11 kello 23 53 24" /></p>
+
+<h3 id="i-asenna-ja-konfiguroi-apache-manuaalinen-asennus">i) Asenna ja konfiguroi Apache. <strong>manuaalinen asennus</strong></h3>
+
+<p><strong>Tehtävä tehty automatisoituna seuraavan viikon palautuksessa</strong> <img src="https://github.com/bhg995/paha/blob/main/h3.md#d-virtualhost-asenna-apache-tarjoilemaan-weppisivua" alt="Asenna ja konfiguroi Apache" /></p>
+
+<p>Tarkistin aluksi että Apachen sivu toimii ja näkyy</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.07.09.png" alt="Näyttökuva 2024-11-12 kello 0 07 09" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">curl localhost</code> komento tulosti Apachen kotisivun, <code class="language-plaintext highlighter-rouge">curl -I localhost</code> komento tulosti lyhyemmän ytimekkään vastauksen.</p>
+
+<p>Kaikki näytti olevan OK! Voin aloittaa tekemällä kansion käyttäjän hakemistoon:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo mkdir -p /home/leonardo/public_html/examplevagrant.com
+</code></pre></div></div>
+
+<p>Apache sivujen konfiguraatio:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudoedit /etc/apache2/sites-available/examplevagrant.com.conf 
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.19.42.png" alt="Näyttökuva 2024-11-12 kello 0 19 42" /></p>
+
+<p>Etusivu <code class="language-plaintext highlighter-rouge">index.html</code> sisältö:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.28.07.png" alt="Näyttökuva 2024-11-12 kello 0 28 07" /></p>
+
+<p>Otin Apachen oletussivun pois käytöstä ja otin omat sivut käyttöön komennoilla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo a2dissite 000-default.conf
+$ sudo a2ensite examplevagrant.com.conf
+</code></pre></div></div>
+
+<p>Jonka jälkeen Apache täytyy käynnistää uudelleen komennolla:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%205.18.03.png" alt="kuva" /></p>
+
+<p>Varmistetaan vielä että etusivua pystyy muokkaamaan ilman sudoa <a href="https://linux.die.net/man/1/chown"><code class="language-plaintext highlighter-rouge">chown</code></a></p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-12%20kello%200.39.07.png" alt="Näyttökuva 2024-11-12 kello 0 39 07" /></p>
+
+<p>Vaihdoin kansion uudeksi omistajaksi käyttäjän <code class="language-plaintext highlighter-rouge">leonardo</code>, näin käyttäjä pystyy muokkaamaan ilman sudoa.</p>
+
+<p><strong>PÄIVITYS 14.11.2024.</strong> Tehtävää on jatkettu, Apache piti asentaa ja konfiguroida automaattisesti master-minion tekniikalla. Tämä tuli esille rinnakkaisarvioinnissa.</p>
+
+<p>Poistin käyttäjän ja käyttäjän hakemiston:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo deluser leonardo
+$ sudo rm -rf /home/leonardo
+</code></pre></div></div>
+
+<p>Poistin Apache latauksen ja konfiguraatiot:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt purge apache2
+$ sudo apt autoremove apache2
+$ $ sudo rm -rf /etc/apache2/sites-available/
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/c531fef4-90c6-4ea8-82cb-dae516e29d68" alt="Näyttökuva 2024-11-13 kello 12 15 25" /></p>
+
+<p>Nyt voidaan aloittaa alusta Master koneelta</p>
+
+<p>Tehtävä oli haastava, joten kävin etsimässä esimerkkejä edellisiltä toteutuksilta.</p>
+
+<p>Löysin nimimerkillä <a href="https://github.com/Vapalo">Vapalo</a>:n <a href="https://github.com/Vapalo/suolagit/blob/main/apache/init.sls">.sls tiedoston</a>. [6]</p>
+
+<p>Luin hänen koodia ja muokkasin sitä niin että, olisin itsekkin voinut käyttää.</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-14%20kello%2011.50.39.png" alt="kuva" /></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">userdir</code> ‘This module allows user-specific directories to be accessed using the http://example.com/~user/ syntax.’ <a href="https://httpd.apache.org/docs/2.4/mod/mod_userdir.html">Lähde</a> [7]</li>
+  <li><code class="language-plaintext highlighter-rouge">removedefault</code> tässä muutetaan Apachen <code class="language-plaintext highlighter-rouge">index.html</code> oletussivua, lisätään teksti “Harjoitellaan palvelinhallintaa!”</li>
+  <li><code class="language-plaintext highlighter-rouge">/home/leonardo/public_html</code> tässä kohdassa, tehdään <code class="language-plaintext highlighter-rouge">public_html</code> kansio käyttäjän hakemistoon, vaihdetaan se käyttäjän omistukseen sekä muutetaan oikeuksia.</li>
+</ul>
+
+<p>Ajoin ensin käskyt yksitellen, varmistin että jokainen toimii. Sen jälkeen ajoin komennot samaan aikaan jonka tuloksena:</p>
+
+<p><img src="https://github.com/bhg995/paha/blob/main/ias/Na%CC%88ytto%CC%88kuva%202024-11-14%20kello%2012.02.42.png" alt="kuva2" /></p>
+
+<p>Eli, 1. käyttäjä on luotu, 2. Apache asennettu, 3. Apache on käynnissä (varmistus), 4. Käyttäjä pystyy muokkaamaan omassa hakemistossa olevia tiedostoja URL:n avulla, 5. Apachen oletus .html sivu on muokattu, 6. Käyttäjän hakemistoon on luotu kansio, jossa käyttäjä voi muokkaa sivuja.</p>
+
+<p>Tehtävä alkoi käydä erittäin haastavaksi, sillä käyttäjän piti pystyä muokkaamaan sivuja omasta hakemistostaan ilman sudoa, sekä .conf tiedosto piti vaihtaa omaan konfiguraatioon ja aktivoida se.</p>
+
+<p>Tehtävää päivitetään lisää tulevaisuudessa.</p>
+
+<h4 id="päivitykset">Päivitykset</h4>
+
+<ul>
+  <li>14.11.2024, rinnakkaisarvioinnin jälkeen
+    <ul>
+      <li>jatkettu i) tehtävää,</li>
+      <li>lisätty uusi lähde</li>
+      <li>selkeytetty lähdemerkintöjä</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="lähteet">Lähteet</h1>
+
+<ol>
+  <li>https://terokarvinen.com
+    <ul>
+      <li>https://terokarvinen.com/palvelinten-hallinta/#h2-infra-as-code</li>
+      <li>https://terokarvinen.com/2021/two-machine-virtual-network-with-debian-11-bullseye-and-vagrant/</li>
+      <li>https://terokarvinen.com/2018/salt-quickstart-salt-stack-master-and-slave-on-ubuntu-linux/</li>
+      <li>https://terokarvinen.com/2024/hello-salt-infra-as-code/</li>
+      <li>https://terokarvinen.com/2023/salt-vagrant/#infra-as-code—your-wishes-as-a-text-file</li>
+      <li>https://terokarvinen.com/2021/salt-run-command-locally/</li>
+    </ul>
+  </li>
+  <li>https://docs.saltproject.io/salt/user-guide/en/latest/topics/overview.html#rules-of-yaml</li>
+  <li>https://developer.hashicorp.com/vagrant/tutorials/getting-started/getting-started-index</li>
+  <li>https://developer.hashicorp.com/vagrant/install</li>
+  <li>-</li>
+  <li>https://github.com/Vapalo
+    <ul>
+      <li>https://github.com/Vapalo/suolagit/blob/main/apache/init.sls</li>
+    </ul>
+  </li>
+  <li>https://httpd.apache.org/docs/2.4/mod/mod_userdir.html</li>
+</ol>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

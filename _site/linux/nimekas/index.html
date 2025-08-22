@@ -1,0 +1,295 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Nimekäs
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Multiply in server">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Nimekäs</h1>
+        
+        <p>Multiply in server</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/linux">Previous Page</a></p>
+
+<h1 id="nimekäs">Nimekäs</h1>
+
+<p><em>“Dig (Domain Information Groper) is a powerful command-line tool for querying DNS name servers.
+Most DNS administrators use dig to troubleshoot DNS problems because of its flexibility, 
+ease of use, and clarity of output. Other lookup tools tend to have less functionality than dig.”</em> - Linuxize [1]</p>
+
+<p><code class="language-plaintext highlighter-rouge">dig</code> Komento on hyödyllinen apuväline DNS-tietojen tarkisteluun. [2]</p>
+
+<p><em>“<code class="language-plaintext highlighter-rouge">host</code> is a simple utility for performing DNS lookups. It is normally used to convert names to IP addresses and vice versa.”</em> - Linux manual pages[3]</p>
+
+<p><code class="language-plaintext highlighter-rouge">scp</code> Komennolla voi kopioida tiedostoja turvallisesti verkon ylitse palvelimeen SSH-yhteydellä. <code class="language-plaintext highlighter-rouge">scp</code> voi pyytää salasanaa jos sitä tarvitaan. [4]</p>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li>Näyttö: AOC G2490VXA, 24” QHD(1440p), 144Hz</li>
+  <li>Raspberry Pi 4 model B 4 Gt</li>
+  <li>Käyttöjärjestelmä: Raspberry Pi OS 32bit kernel (based on Debian)</li>
+  <li>CPU: Broadcom BCM2711 SoC with a 1.8 GHz 64-bit quad-core ARM Cortex-A72 processor, with 1 MB shared L2 cache.</li>
+  <li>Näytönohjain: Broadcom VideoCore VI @ 500 MHz</li>
+  <li>Muisti: 4 Gt</li>
+  <li>Tallennustila: 32 Gt</li>
+</ul>
+
+<h2 id="a-kotisivu-tee-vähintään-kolmen-erillisen-weppisivun-kotisivu-ja-kopioi-se-näkymään-palvelimellesi">a) Kotisivu. Tee vähintään kolmen erillisen weppisivun kotisivu ja kopioi se näkymään palvelimellesi.</h2>
+
+<p>Tein uuden virtuaalikoneen ja nimesin sen mansikaksi</p>
+
+<p><img src="https://github.com/user-attachments/assets/01a77236-a660-4b4e-a277-b8fd73811725" alt="Näyttökuva 2024-9-24 kello 16 06 58" /></p>
+
+<p>Valmistelin DNS asetukset namecheap:ssä</p>
+
+<p><img src="https://github.com/user-attachments/assets/ded4fead-1c4d-426b-b70f-1c182da27e39" alt="Näyttökuva 2024-9-25 kello 0 58 19" /></p>
+
+<p>Otin yhteyttä serveriin ja tein alkutoimenpiteet</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh root@167.99..210.231
+</code></pre></div></div>
+
+<p>päivitys</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt update &amp;&amp; sudo apt upgrade
+</code></pre></div></div>
+
+<p>palomuurin asennus</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install ufw
+</code></pre></div></div>
+
+<p>avataan portti 22</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw allow 22/tcp
+</code></pre></div></div>
+
+<p>käynnistetään palomuuri</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw enable
+</code></pre></div></div>
+
+<p>latasin  työkalut</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install openssh-server
+sudo apt-get install micro
+sudo apt-get install apache2
+</code></pre></div></div>
+
+<p>Tein uuden käyttäjän ja annoin sudo oikeudet.</p>
+
+<p><img src="https://github.com/user-attachments/assets/2250a0a0-97b5-4d5a-ad63-25260a1c501a" alt="Näyttökuva 2024-9-24 kello 16 19 29" /></p>
+
+<p>Kokeilin toiselta tietokoneelta että käyttäjä oli luotu ja minulla oli pääsy siihen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/0f161ad8-8e3e-4385-a3af-57939eaac763" alt="Näyttökuva 2024-9-24 kello 16 21 26" /></p>
+
+<p>Yritin sulkea root käyttäjän, mutta sain viestin:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usermod: user root is currently used by process 1
+</code></pre></div></div>
+
+<p>DigitalOceanin asetuksissa, valitsin palvelimen kirjautumismuodoksi SSH-avaimen. Löysin opiskelijan ohjeista <code class="language-plaintext highlighter-rouge">sudoedit /etc/ssh/sshd_config</code>, jolla suljin root oikeudet manuaalisesti. [5]</p>
+
+<p><img src="https://github.com/user-attachments/assets/6261feb4-ad9b-4678-ba75-d34f9fe98210" alt="Näyttökuva 2024-9-24 kello 16 32 06" /></p>
+
+<p>Sitten vielä lisäsin reijän palomuuriin</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo ufw allow 80/tcp
+</code></pre></div></div>
+
+<p>Sen jälkeen komennot</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service ssh restart
+sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre></div></div>
+
+<p>Nyt voin alkaa tekemään verkkosivustot palvelimeen. Ensin katsoin että palvelin toimii ja localhost näyttää Apachen oletuskotisivua.</p>
+
+<p><img src="https://github.com/user-attachments/assets/a28ac554-a185-452a-9056-6d025087833c" alt="Näyttökuva 2024-9-24 kello 16 40 01" /></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo "Default|sudo tee /var/www/html/index.html"
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/9a4c8e9e-24e5-4dae-bfab-9ffd3f8b45d2" alt="Näyttökuva 2024-9-24 kello 16 43 41" /></p>
+
+<p>Sitten tein hakemistot sivuille</p>
+
+<p><img src="https://github.com/user-attachments/assets/e3fd4ebe-18fc-47dc-a6ca-b2e65fc5d1a4" alt="Näyttökuva 2024-9-24 kello 16 48 48" /></p>
+
+<p>Tehtävän mukaan sivujen piti olla muokattavissa ilman pääkäyttäjän oikeuksia, siirsin käyttäjän public_html kansioon.</p>
+
+<p><img src="https://github.com/user-attachments/assets/13c17bbb-975f-4da5-bbc9-ddf3a2824dcd" alt="Näyttökuva 2024-9-24 kello 23 56 33" /></p>
+
+<p>Muutin Apachen VirtualHost-asetukset</p>
+
+<p>Edellisessä tehtävässä <a href="https://github.com/bhg995/lise/blob/main/h4/maailmaKuulee.md">MaailmaKuulee</a> käyttäjän oikeudet kansioiden kanssa oli hieman ongelmaa. Muokkasin kansioiden käyttöoikeuksia tässä vaiheessa..</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod o+x /home
+chmod o+x /home/immanuel
+</code></pre></div></div>
+
+<p>Sitten otin userdir käyttöön</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo a2enmod userdir
+sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p>Loin virtualhost konfiguraatiot apachelle:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo micro /etc/apache2/sites-available/llanga.live.conf
+sudo micro /etc/apache2/sites-available/site2.llanga.live.conf
+sudo micro /etc/apache2/sites-available/site3.llanga.live.conf
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/9d8f69d0-baf9-4a5c-b1f7-51b063f80679" alt="Näyttökuva 2024-9-25 kello 0 23 50" /></p>
+
+<p>sivuille 2 ja 3 muutin ServerNameksi <code class="language-plaintext highlighter-rouge">site2.llanga.live</code> ja <code class="language-plaintext highlighter-rouge">site3.llanga.live</code></p>
+
+<p>Tämän jälkeen otin palvelimet käyttöön</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo a2ensite llanga.live.conf
+sudo a2ensite site2.llanga.live.conf
+sudo a2ensite site3.llanga.live.conf
+</code></pre></div></div>
+
+<p>Sitten käynnistin Apachen uudelleen</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p>Tämän jälkeen aloin luoda HTML sivut ja linkitin toisiinsa:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>micro /home/immanuel/public_html/site1/index.html
+micro /home/immanuel/public_html/site2/index.html
+micro /home/immanuel/public_html/site3/index.html
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/7cafdd34-5144-47b8-9128-98295ec680b7" alt="Näyttökuva 2024-9-24 kello 17 26 34" /></p>
+
+<p>Sivut toimivat selaimella</p>
+
+<p><img src="https://github.com/user-attachments/assets/816df7f0-ff70-45ae-b877-9570996cb8f4" alt="Näyttökuva 2024-9-25 kello 0 29 36" /></p>
+
+<p>Tein validit HTML5 sivut kannettavalla tietokoneellani, ja käytin <code class="language-plaintext highlighter-rouge">scp</code> komentoa kopioidakseni palvelimelleni.</p>
+
+<p><img src="https://github.com/user-attachments/assets/c30340a2-0d6a-4650-8780-f360b702c4d9" alt="Näyttökuva 2024-9-25 kello 0 50 21" /></p>
+
+<p>Kopiointi onnistui</p>
+
+<p><img src="https://github.com/user-attachments/assets/eb205ba9-229d-4ee5-8bd6-538640089fdd" alt="Näyttökuva 2024-9-25 kello 0 53 37" /></p>
+
+<p>Selaimella näytti OK!</p>
+
+<p><img src="https://github.com/user-attachments/assets/fcdab75b-f019-45f4-9949-f62733b8b863" alt="Näyttökuva 2024-9-25 kello 1 39 16" /></p>
+
+<h2 id="b-alidomain">b) Alidomain</h2>
+
+<p>En ymmärtänyt tehtävää hyvin, voi olla että olin tehnyt a) tehtävän jälkimmäiset sivut osittain alidomainena?. Loin silti CNAME record luodakseen alidomaineja namecheapissä. Otan selvää seuraavalla tunnilla.</p>
+
+<p><img src="https://github.com/user-attachments/assets/4a639787-9dd5-424c-9bb0-6fafcd3a0835" alt="Näyttökuva 2024-9-25 kello 1 11 24" /></p>
+
+<h2 id="c-pubkey">c) Pubkey</h2>
+
+<p><img src="https://github.com/user-attachments/assets/1bffe5bd-c970-4a96-9a2b-1e538df64c93" alt="Näyttökuva 2024-9-25 kello 1 18 43" /></p>
+
+<p>Automatisointi</p>
+
+<p><img src="https://github.com/user-attachments/assets/2ee10c53-5fca-484f-a8d5-a988ef89eceb" alt="Näyttökuva 2024-9-25 kello 1 34 38" /></p>
+
+<h2 id="d-tutki-jonkin-nimen-dns-tietoja-host-ja-dig--komennoilla">d) Tutki jonkin nimen DNS-tietoja ‘host’ ja ‘dig’ -komennoilla</h2>
+
+<p>En ymmärtänyt <code class="language-plaintext highlighter-rouge">dig</code> komennon tuloksia. Päätin että otan selvää seuraavalla tunnilla.</p>
+
+<p><img src="https://github.com/user-attachments/assets/1cfbf668-3de1-4192-b868-bf9f93e5a2fc" alt="Näyttökuva 2024-9-25 kello 1 43 21" /></p>
+
+<h2 id="lähteet">Lähteet</h2>
+
+<ol>
+  <li>https://linuxize.com/post/how-to-use-dig-command-to-query-dns-in-linux/</li>
+  <li>https://linux.die.net/man/1/dig</li>
+  <li>https://linux.die.net/man/1/host</li>
+  <li>https://linux.die.net/man/1/scp</li>
+  <li>https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/</li>
+  <li>https://terokarvinen.com/2018/04/10/name-based-virtual-hosts-on-apache-multiple-websites-to-single-ip-address/</li>
+</ol>
+
+<ul>
+  <li>https://www.openssh.com/</li>
+</ul>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+
+
+<!doctype html>
+<html lang="en-US" >
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        
+        Maailma Kuulee
+         | bhg995
+        
+    </title>
+    <meta property="og:title" content="IT &amp; Security Projects" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content="Deploying and hosting web server">
+    <link rel="canonical" href="http://localhost:4000/" />
+    <meta property="og:url" content="http://localhost:4000/" />
+    <meta property="og:site_name" content="IT" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content="IT &amp; Security Projects Portfolio" />
+    <script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Programming, Configuration Management, and Computer Security — including projects and reports.","headline":"IT &amp; Security Projects Portfolio","name":"IT","url":"http://localhost:4000/"}</script>
+    <!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=5102d6906bec8de3cf54d5eae2973d5cf40a3a9b">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.3.0.min.js"
+        integrity="sha256-RTQy8VOmNlT6b2PIRur37p6JEBZUE7o8wPgMvu18MC4=" crossorigin="anonymous"></script>
+    <script src="/assets/js/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+    <!-- Setup Google Analytics -->
+     
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JMZC2X9CQD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JMZC2X9CQD');
+</script>
+ 
+    <!-- favicon -->
+    <!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>IT & Security Projects Portfolio</h1>
+        <p>Programming, Configuration Management, and Computer Security — including projects and reports.</p>
+    </header> -->
+
+    <header>
+        <h1>Maailma Kuulee</h1>
+        
+        <p>Deploying and hosting web server</p>
+        
+        
+    </header>
+      <nav>
+        <ul></ul>
+      </nav>
+    <div id="banner" style="width:100%;">
+        <!-- <a href="#" class="button fork"><strong>link</strong></a> -->
+    </div>
+    <div class="wrapper">
+        <section>
+            <p><a href="/linux">Previous Page</a></p>
+
+<h1 id="vps--webserver-159-klo-1830">VPS &amp; Webserver. 15.9 klo 18:30</h1>
+
+<p>Tämä Github dokumentin kirjoitus alkoi klo 18:30. Valmistelut alkoivat heti viikkoluennon jälkeen, jotkut kohdat ovat tehty eri aikoina.</p>
+
+<p>Tehtävä b) Tee alkutoimet omalla virtuaalipalvelimellasi &amp; c) Asenna weppipalvelin omalle virtuaalipalvelimellesi oli tehty klo sunnuntaina 15.9 klo 18:50 - 20:13. www.llanga.live.</p>
+
+<h2 id="laitteisto">Laitteisto</h2>
+
+<ul>
+  <li><strong>Näyttö: AOC G2490VXA, 24” QHD(1440p), 144Hz</strong></li>
+  <li><strong>Raspberry Pi 4 model B 4 Gt</strong></li>
+  <li>Käyttöjärjestelmä: Raspberry Pi OS 32bit kernel (based on Debian)</li>
+  <li>CPU: Broadcom BCM2711 SoC with a 1.8 GHz 64-bit quad-core ARM Cortex-A72 processor, with 1 MB shared L2 cache.</li>
+  <li>Näytönohjain: Broadcom VideoCore VI @ 500 MHz</li>
+  <li>Muisti: 4 Gt</li>
+  <li>Tallennustila: 32 Gt</li>
+</ul>
+
+<h3 id="x-lue-ja-tiivistä">x) Lue ja tiivistä</h3>
+
+<ul>
+  <li>Tavoitteena oli vuokrata virtuaalipalvelin, ja asentaa webbipalvelin virtuaalipalvelimelle.</li>
+  <li>Susanna oli hyödyntänyt Github Education pakettia joka on suunnattu ohjelmistokehityksen opiskelijoille.</li>
+  <li>Datakeskuksen sijainniksi hän valitsi Amsterdam, perustellen sen lähellä. Myös GDPR oli otettu huomioon.</li>
+  <li>Autentikointimenetelmäksi Susanna valitsi vahvan salasanan, SSH-avain olisi ollut hänen mukaan parempia.</li>
+  <li>Yhteys palvelimeen oli muodostettu ssh menetelmällä</li>
+  <li>Susanna lisäsi uuden käyttäjän virtuaalipalvelimelle, samalla suojasi sen salasanalla</li>
+  <li><code class="language-plaintext highlighter-rouge">$ sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get dist-upgrade</code></li>
+</ul>
+
+<h3 id="a-vuokraa-oma-virtuaalipalvelin-haluamaltasi-palveluntarjoajalta">a) Vuokraa oma virtuaalipalvelin haluamaltasi palveluntarjoajalta.</h3>
+
+<p>Valitsin DigitalOceanin palvelimen palvelutarjoajaksi. Tero Karvinen ehdottaa sen käyttämistä kurssilla, olen nähnyt sen myös käytössä, ja uskoin että osaisin käyttää tai oppisin ainakin nopeasti.</p>
+
+<p><img src="https://github.com/user-attachments/assets/86266c34-c108-414a-9c6b-4e05278f52c0" alt="configs" /></p>
+
+<p>Virtuaalikone pitää ja kannattaa aina olla mahdollisimman lähellä käyttäjiä. Tätä tehtävää varten ei tämä ollut tärkeä, mutta valitsin kuitenkin Amsterdamin, joka sijaitsee Euroopassa sekä kuuluu GDPR:n piiriin.</p>
+
+<p><img src="https://github.com/user-attachments/assets/9349c848-e6aa-434e-98de-d5bfda26d9fb" alt="creatingDroplet" /></p>
+
+<p>Tämän jälkeen virtuaalipalvelimeni, jonka nimesin valdelmaksi, oli valmis ja sain ip osoitteen nimipalvelua varten.</p>
+
+<p><img src="https://github.com/user-attachments/assets/1bdf15c5-a92a-4b3f-8be3-fdcb2678c46f" alt="dropletti" /></p>
+
+<p>Valitsin domainnimen tarjoajaksi Namecheapiä. Tämä oli helppo valinta, opettaja on ehdottanut sen käyttöä ja se on varsin edullinen.</p>
+
+<p>Ostaessani domainnimeä, olin niin innoissani tehtävästä että unohdin dokumentoida Namecheapin prosessin. Sain kuitenkin näyttökuvan sähköpostin vahvistuksesta ja tilauksestani.</p>
+
+<p><img src="https://github.com/user-attachments/assets/7788426f-df9b-4fbd-9985-46826bdd94d4" alt="namecheapSuccess" /></p>
+
+<p><img src="https://github.com/user-attachments/assets/1d173375-a750-4f86-ab37-50a299ec9f44" alt="2024-09-15-221314_930x402_scrot" /></p>
+
+<h3 id="b-tee-alkutoimet-omalla-virtuaalipalvelimellasi-klo-1850">b) Tee alkutoimet omalla virtuaalipalvelimellasi. klo 18:50</h3>
+
+<p>Aloitin ottamalla yhteyttä palvelimeen</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ssh root@157.245.78.37
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/cb2c22b6-df15-4151-b7d4-55694e18aa84" alt="2024-09-15-185407_655x254_scrot" /></p>
+
+<p>Ensin hain päivitykset</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo apt-get update &amp;&amp; sudo apt-get upgrade
+</code></pre></div></div>
+
+<p>Jonka jälkeen asensin palomuurin, avasin ensimmäisen portin ja kytkin palomuurin päälle</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo apt-get install ufw
+    $ sudo ufw allow 22/tcp
+    $ sudo ufw enable
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/bdb064e0-a129-4462-8df3-cb854aa803e4" alt="reikaPalomuuriin2024-09-15-190004_639x318_scrot" /></p>
+
+<p>Lisäsinn uuden käyttäjän jolle loin vahvan salasanan, tein myös käyttäjästä sudoerin (sudo-oikeudet)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo adduser leonardo 
+    $ sudo adduser leonardo sudo
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/7296ca30-1803-458f-97ee-74133046478e" alt="uusiKaytt2024-09-15-190403_639x622_scrot" /></p>
+
+<p>Sen jälkeen oli mahdollista kirjautua uudella käyttäjällä ja lukita juurikäyttäjä (root):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ ssh leonardo@157.245.78.37
+    $ sudo usermod -lock root
+</code></pre></div></div>
+
+<p>Sitten laitoin päivitykset kuntoon kerralla</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo apt-get update &amp;&amp; sudo apt-get upgrade &amp;&amp; sudo apt-get dist-upgrade
+</code></pre></div></div>
+
+<p>Asensin Apachen virtuaalipalvelimelle ja tarkistin toimivuuden</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo apt-get install apache2
+    $ sudo systemctl start apache2
+    $ sudo systemctl status apache2
+</code></pre></div></div>
+
+<p>Kaikki näytti hyvältä, paitsi apache2.service näytti olevan disabled</p>
+
+<p><img src="https://github.com/user-attachments/assets/8df61103-583a-48c0-9381-6cc570e0f551" alt="apacheSTATUS2024-09-15-191500_759x446_scrot" /></p>
+
+<p>Ei ollut virhe, mutta korjasin sen</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo systemctl enable apache2
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/ab7e6244-e2a5-421c-ad1d-3a1f4aeb1408" alt="apacheSTATUskorjattu2024-09-15-191547_759x254_scrot" /></p>
+
+<h3 id="c-asenna-weppipalvelin-omalle-virtuaalipalvelimellesi">c) Asenna weppipalvelin omalle virtuaalipalvelimellesi.</h3>
+
+<p>Tämän jälkeen toisen reijän palomuuriin</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo ufw allow 80/tcp
+</code></pre></div></div>
+
+<p>Korvasin Apache palvelimen oletussivut:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ echo HEI MAAILMA! KUULUUKO?|sudo tee /var/www/index.html
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/1f148dc2-f767-48cc-ab61-b67b0657e6ef" alt="OletussivuVaihdettu2024-09-15-192234_655x110_scrot" /></p>
+
+<p>Otin <code class="language-plaintext highlighter-rouge">userdir</code>n käyttöön ja käynnistin palvelimen uudestaan</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo a2enmod userdir
+    $ sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p>Asensin micro editorin palvelimelle</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo apt-get install micro
+</code></pre></div></div>
+
+<p>Tein uuden kansion sivua varten</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ mkdir -p /home/leonardo/public_html/llanga.example.com
+</code></pre></div></div>
+
+<p>Tein myös uuden .html tiedoston kotisivun näkymää varten</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ micro /home/leonardo/public_html/llanga.example.com/index.html
+</code></pre></div></div>
+
+<p>Tähän tiedostoon kirjoitin HTML/CSS koodia, joka tulee näkymään sivulla llanga.live</p>
+
+<p>Sen jälkeen laitoin sivuston asetukset kuntoon</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ micro /etc/apache2/sites-available/llanga.example.com.conf
+</code></pre></div></div>
+
+<p><img src="https://github.com/user-attachments/assets/83c5d55e-8d6e-481c-ab5c-3437e6a8c185" alt="AsetusTietosto2024-09-15-195054_655x334_scrot" /></p>
+
+<p>Sen jälkeen otin sivuston käyttöön ja käynnistin apachen uudelleen</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo a2ensite llanga.example.com.conf
+    $ sudo systemctl restart apache2
+</code></pre></div></div>
+
+<p>Tämän jälkeen kokeilin komentoa <code class="language-plaintext highlighter-rouge">curl localhost</code>, mutta sain virhekoodin 403 HTTP-otsakkeeseen.</p>
+
+<p><img src="https://github.com/user-attachments/assets/8c54350e-2e67-464d-be13-9622980ae356" alt="Error403_2024-09-15-195600_655x254_scrot" /></p>
+
+<p>Etsin lokista tietoa</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ sudo tail /var/log/apache2/error.log
+</code></pre></div></div>
+
+<p>Josta käy ilmi</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    (13)Permission denied: [client 185.191.126.213:56244] AH00035: access 
+    to / denied (filesystem path '/home/leonardo/public_html') because 
+    search permissions are missing on a component of the path
+</code></pre></div></div>
+
+<p>Syötin virheviestin <code class="language-plaintext highlighter-rouge">(13)Permission denied: [client 185.191.126.213:56244] AH00035: access 
+        to / denied (filesystem path '/home/leonardo/public_html') because 
+        search permissions are missing on a component of the path</code> ChatGPT:n, ja vastaus oli</p>
+
+<blockquote>
+  <p>The error message you shared provides a clear indication that the 403 Forbidden error is related to file system permissions. Specifically, Apache is trying to access /home/leonardo/public_html, but it is encountering a Permission Denied error due to missing search permissions on one of the directories in the path.</p>
+
+  <p>Key Details in the Error:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Permission Denied (Error 13): This means Apache doesn't have permission to access one of the directories in the path leading to /home/leonardo/public_html.
+Search Permissions: The search (or execute) permission (x on directories) allows Apache to "search" through directories to locate files.
+</code></pre></div>  </div>
+
+  <p>Likely Causes:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Permissions Issue on Parent Directories: One or more directories in the path (/home, /home/leonardo, or /home/leonardo/public_html) are missing the necessary execute (x) permissions for the web server user (typically www-data on Debian-based systems).
+Directory Ownership: The directory may not be owned by the correct user, preventing Apache from traversing it.
+</code></pre></div>  </div>
+
+  <p>Solution:</p>
+
+  <p>To fix this, you need to ensure that Apache has the necessary permissions on the directory path:
+Step 1: Check Permissions on the Path Components</p>
+
+  <p>Run the following command to check the permissions on each directory in the path:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ ls -ld /home /home/leonardo /home/leonardo/public_html
+</code></pre></div>  </div>
+
+  <p>This will show the current permissions for each directory in the path.
+Step 2: Grant Execute Permissions on Parent Directories</p>
+
+  <p>If the directories <code class="language-plaintext highlighter-rouge">/home</code> or <code class="language-plaintext highlighter-rouge">/home/leonardo</code> are missing the <code class="language-plaintext highlighter-rouge">x</code> (execute) permission, you need to add it:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   $ chmod o+x /home
+   $ chmod o+x /home/leonardo
+</code></pre></div>  </div>
+</blockquote>
+
+<p>Olen tottunut näkemään luku/kirjoitus/execute liittyvissä komennoissa komennon <code class="language-plaintext highlighter-rouge">chmod 755</code> joten kysyin ChatGPT:ltä</p>
+
+<p><code class="language-plaintext highlighter-rouge">difference between chmod 755 /home/leonardo/public_html and chmod o+x /home/leonardo?</code></p>
+
+<p>ChatGPT:</p>
+
+<blockquote>
+  <p>The two commands you mentioned, chmod 755 /home/leonardo/public_html and chmod o+x /home/leonardo, have different purposes and &gt; affect different parts of the file permissions. Here’s the difference:</p>
+  <ol>
+    <li>chmod 755 /home/leonardo/public_html</li>
+  </ol>
+
+  <p>This command modifies the permissions of the /home/leonardo/public_html directory to 755. Here’s what it means:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7 (rwx): The owner (leonardo) has read, write, and execute permissions.
+5 (r-x): The group (leonardo) and others (including Apache) have read and execute permissions but cannot write.
+</code></pre></div>  </div>
+
+  <p>So, this command allows everyone (owner, group, and others) to enter and read files in the public_html directory, but only the owner (leonardo) can modify the files.</p>
+  <ol>
+    <li>chmod o+x /home/leonardo</li>
+  </ol>
+
+  <p>This command adds the execute permission only for “others” (including Apache) on the /home/leonardo directory.</p>
+
+  <p>o+x: This gives “others” (anyone who is not the owner or in the group) permission to traverse (execute on directories means “can enter this directory”).</p>
+
+  <p>This command is necessary because Apache needs to traverse the /home/leonardo directory to reach /home/leonardo/public_html, but it doesn’t give Apache permission to read the contents of /home/leonardo itself, which keeps it secure.
+Summary:</p>
+
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod 755 /home/leonardo/public_html: Allows anyone (Apache included) to access and read files within public_html, but only leonardo can modify the contents.
+chmod o+x /home/leonardo: Grants only the minimal permission needed for Apache to "enter" the /home/leonardo directory and reach public_html, without exposing the contents of /home/leonardo.
+</code></pre></div>  </div>
+
+  <p>Both permissions are important: 755 on public_html allows Apache to read files there, and o+x on /home/leonardo lets Apache traverse through /home/leonardo to get to public_html.</p>
+</blockquote>
+
+<p>ChatGPT mukaan chmod o+x /home/leonardo näytti olevan tiukempi sallimaan oikeuksia, ja käytin sitä virheen korjauksessta.</p>
+
+<p>Käynnistin apachen uudelleen, sen jälkeen kun olin syöttänyt ChatGPT:n ehdottamaa komentoa korjaamaan <code class="language-plaintext highlighter-rouge">Error 403</code></p>
+
+<p>Kokeilin uudestaan curl komentoa ja sain koodin 200!</p>
+
+<p>Tarkistin että sivu toimii myös selaimen kautta</p>
+
+<p><img src="https://github.com/user-attachments/assets/80a581da-44f6-4d62-8993-1195c8385283" alt="kotisivut2024-09-15-214418_1000x727_scrot" /></p>
+
+<p>Sekä että toimii näkyy asianmukaisesti puhelimessa</p>
+
+<p><img src="https://github.com/user-attachments/assets/52149d34-8993-45ba-bc88-6224709e990a" alt="IMG_0411 3" /></p>
+
+<p>Klo 20:13 olin valmis ja sivu pyörii</p>
+
+<h2 id="lähteet">Lähteet</h2>
+<ul>
+  <li>https://terokarvinen.com/linux-palvelimet/</li>
+  <li>https://susannalehto.fi/2022/teoriasta-kaytantoon-pilvipalvelimen-avulla-h4/</li>
+  <li>https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu#step-5-allowing-other-connections</li>
+</ul>
+
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p><strong>&copy; 2025</strong></p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>
