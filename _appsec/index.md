@@ -5,10 +5,7 @@ description: About app security
 permalink: /appsec/
 ---
 
-<button><a href="/">Main Page</a></button>
-<button><a href="/linux">Linux Servers</a></button>
-<button><a href="/confman">Configuration Management</a></button>
-
+<a href="/">Main Page</a>
 
 # {{ page.title }} & Vulnerabilities
 
