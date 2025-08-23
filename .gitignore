@@ -46,3 +46,5 @@ _site/
 # Bundler
 vendor/
 
+# Custon
+/notes.md
