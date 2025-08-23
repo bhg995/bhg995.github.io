@@ -4,7 +4,8 @@ description: Command Line Basics
 permalink: /linux/pingviini/
 ---
 
-<a href="/linux">Previous Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Previous Page</a></button>
 
 # Command Line Basics
 

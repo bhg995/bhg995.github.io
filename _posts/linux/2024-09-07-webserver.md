@@ -4,7 +4,8 @@ description: Daemons and web servers
 permalink: /linux/webserver/
 ---
 
-<a href="/linux">Previous Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Previous Page</a></button>
 
 # Apache & Web server
 

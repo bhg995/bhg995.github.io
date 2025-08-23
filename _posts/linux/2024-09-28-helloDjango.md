@@ -4,7 +4,8 @@ description: Cool framework
 permalink: /linux/hellodjango/
 ---
 
-<a href="/linux">Previous Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Previous Page</a></button>
 
 # Hello Django
 

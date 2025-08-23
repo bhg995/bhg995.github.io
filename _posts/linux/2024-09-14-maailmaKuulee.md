@@ -4,7 +4,8 @@ description: Deploying and hosting web server
 permalink: /linux/maailmakuulee/
 ---
 
-<a href="/linux">Previous Page</a>
+<button><a href="/">Main Page</a></button>
+<button><a href="/linux">Previous Page</a></button>
 
 # VPS & Webserver. 15.9 klo 18:30
 
