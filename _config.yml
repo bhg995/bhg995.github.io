@@ -2,24 +2,14 @@ remote_theme: pages-themes/leap-day@v0.2.0
 plugins:
   - jekyll-remote-theme
 title: bhg995
-description: IT
+description: IT ADMIN
 
 defaults:
   - scope:
-      path: "_appsec"
+      path: ""
     values:
       layout: "default"
-      permalink: "/appsec/:title/"
-  - scope:
-      path: "_confman"
-    values:
-      layout: "default"
-      permalink: "/confman/:title/"
-  - scope:
-      path: "_linux"
-    values:
-      layout: "default"
-      permalink: "/linux/:title/"
+      permalink: "/collection/:title/"
 
 collections:
   appsec:
