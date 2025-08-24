@@ -13,7 +13,7 @@ permalink: /appsec/
 
 These reports were done as an assigment for the course [Application hacking and vulnerabilities](https://terokarvinen.com/sovellusten-hakkerointi/)
 
-Sovellusten hakkerointi 2025 alkusyksy: ICI012AS3A-3002
+Sovellusten hakkerointi 2025 alkusyksy: [ICI012AS3A](https://opinto-opas.haaga-helia.fi/course/ICI012AS3A)-3002
 
 
 {% for post in site.posts %}

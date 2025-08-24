@@ -13,7 +13,7 @@ permalink: /linux/
 
 These reports were done as an assigment for the course [Linux Servers](https://terokarvinen.com/2024/linux-palvelimet-2024p1-alkusyksy-ici003as2a-3010/).
 
-Linux Palvelimet 2024 alkusyksy: ICI003AS2A-3010
+Linux Palvelimet 2024 alkusyksy: [ICI003AS2A](https://opinto-opas.haaga-helia.fi/course/ICI003AS2AE)-3010
 
 {% for post in site.posts %}
   {% if post.path contains '_posts/linux/' %}
